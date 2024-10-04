@@ -1,7 +1,157 @@
 {
  "children": [
   {
-   "children": null,
+   "children": [
+    {
+     "children": null,
+     "components": {
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.75
+       },
+       "dimensions": {
+        "x": 380.0,
+        "y": 64.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_text": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "font": {
+        "path": ""
+       },
+       "fontSize": 64.0,
+       "horizontal": 1,
+       "text": "Ludum Dare 56",
+       "vertical": 1,
+       "wrapText": false
+      }
+     },
+     "id": 3,
+     "name": "title_text"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 12.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         },
+         "font": {
+          "path": ""
+         },
+         "fontSize": 48.0,
+         "horizontal": 1,
+         "text": "Play",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 4,
+       "name": "button_text"
+      }
+     ],
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/button.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 200.0,
+        "y": 64.0
+       },
+       "enabled": true,
+       "inputType": 2,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       }
+      }
+     },
+     "id": 1048578,
+     "name": "play_button"
+    }
+   ],
    "components": {
     "camera": {
      "clear": true,
@@ -38,8 +188,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 255.0,
-      "y": 255.0
+      "x": 782.0,
+      "y": 420.0
      },
      "enabled": true,
      "inputType": 3,
@@ -65,7 +215,20 @@
    "name": "camera"
   }
  ],
- "components": null,
+ "components": {
+  "scripts": {
+   "scripts": [
+    {
+     "data": {
+      "values": null
+     },
+     "script": {
+      "path": "scripts/main_menu.lua"
+     }
+    }
+   ]
+  }
+ },
  "id": 0,
  "name": "root"
 }
