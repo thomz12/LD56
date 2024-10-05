@@ -1,0 +1,81 @@
+{
+ "children": null,
+ "components": {
+  "physics": {
+   "allowSleep": true,
+   "angularDamping": 0.009999999776482582,
+   "bodyType": 1,
+   "fixRotation": false,
+   "gravityScale": 1.0,
+   "linearDamping": 0.10000000149011612,
+   "projectile": false
+  },
+  "physics_circle": {
+   "categoryBits": 8,
+   "categoryMask": 65535,
+   "density": 1.0,
+   "friction": 0.5,
+   "isSensor": false,
+   "radius": 8.0,
+   "restitution": 0.10000000149011612
+  },
+  "scripts": {
+   "scripts": [
+    {
+     "data": {
+      "values": null
+     },
+     "script": {
+      "path": "scripts/bunny.lua"
+     }
+    },
+    {
+     "data": {
+      "values": null
+     },
+     "script": {
+      "path": "scripts/blocker.lua"
+     }
+    }
+   ]
+  },
+  "sprite": {
+   "color": {
+    "a": 1.0,
+    "b": 1.0,
+    "g": 1.0,
+    "r": 1.0
+   },
+   "dimensions": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "offset": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "origin": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "texture": {
+    "path": "sprites/bunny.png"
+   }
+  },
+  "transform": {
+   "position": {
+    "x": -140.0,
+    "y": 0.0,
+    "z": 0.0
+   },
+   "rotation": 0.0,
+   "scale": {
+    "x": 1.0,
+    "y": 1.0
+   },
+   "type": 0
+  }
+ },
+ "id": 1048578,
+ "name": "bunny"
+}

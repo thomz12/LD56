@@ -61,6 +61,7 @@ function get_mouse_pos()
     return find_entity("camera").camera:screen_to_world(juice.input.get_mouse_position())
 end
 
+---Function to calculate average point.
 function get_average_point()
     local average = juice.vec2.new()
     for index = 1, #entity.line.points do
@@ -72,14 +73,38 @@ function get_average_point()
     return average
 end
 
+---Functoin to calculate bounding box and take its center.
 function get_center_from_bounding_box()
-    --local min
+    local bottom_left = juice.vec2.new(math.maxinteger, math.maxinteger)
+    local top_right = juice.vec2.new(math.mininteger, math.mininteger)
+
+    for index = 1, #entity.line.points do
+        local pos = entity.line.points[index].position
+        
+        if pos.x < bottom_left.x then
+            bottom_left.x = pos.x
+        end
+        if pos.y < bottom_left.y then
+            bottom_left.y = pos.y
+        end
+        if pos.x > top_right.x then
+            top_right.x = pos.x
+        end
+        if pos.y > top_right.y then
+            top_right.y = pos.y
+        end
+    end
+
+    return juice.vec2.new((bottom_left.x + top_right.x) / 2, (bottom_left.y + top_right.y) / 2)
 end
 
 ---Completed a valid circle.
 function complete_circle()
     
-    center = get_average_point()
+    -- Center from bounding box is more forgiving.
+    -- Average point shifts alot depending on framerate/mouse speed
+    -- center = get_average_point()
+    center = get_center_from_bounding_box()
 
     local min_dist = max_radius
     local max_dist = 0
