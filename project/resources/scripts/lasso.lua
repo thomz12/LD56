@@ -2,12 +2,16 @@ local is_drawing = false
 
 local line_begin = {}
 local can_complete = false
+local last_segments = 0
+
+local got_blocked = false
+
 line_connect_threshold = 16.0
 max_radius = 256.0
 
-on_circle_complete = function() end
+circle_threshold = 0.6
 
-local last_segments = 0
+on_circle_complete = function() end
 
 function update(delta_time)
     -- Check for start of drawing.
@@ -19,7 +23,7 @@ function update(delta_time)
 
     -- If already drawing.
     if is_drawing then
-        if juice.input.is_key_released("mouse_left") then
+        if got_blocked or juice.input.is_key_released("mouse_left") then
             end_drawing()
         end
         local pos = get_mouse_pos()
@@ -29,8 +33,6 @@ function update(delta_time)
             last_segments = #entity.line.points
             segment_added(last_segments)
         end
-
-        validate_line()
 
         -- Calculate distance from begin point.
         local direction = juice.vec2.new(line_begin.x - pos.x, line_begin.y - pos.y)
@@ -59,35 +61,57 @@ function get_mouse_pos()
     return find_entity("camera").camera:screen_to_world(juice.input.get_mouse_position())
 end
 
----Completed a valid circle.
-function complete_circle()
-    
+function get_average_point()
     local average = juice.vec2.new()
-
     for index = 1, #entity.line.points do
         average.x = average.x + entity.line.points[index].position.x
         average.y = average.y + entity.line.points[index].position.y
     end
-
     average.x = average.x / #entity.line.points
     average.y = average.y / #entity.line.points
+    return average
+end
 
-    local radius = max_radius
+function get_center_from_bounding_box()
+    --local min
+end
 
+---Completed a valid circle.
+function complete_circle()
+    
+    center = get_average_point()
+
+    local min_dist = max_radius
+    local max_dist = 0
+
+    -- Calculate the minimum distance and maximum distance from center.
     for index = 1, #entity.line.points do
-        local distance = juice.vec2.new(average.x - entity.line.points[index].position.x, average.y - entity.line.points[index].position.y):length()
-        if distance < radius then
-            radius = distance
+        local distance = juice.vec2.new(center.x - entity.line.points[index].position.x, center.y - entity.line.points[index].position.y):length()
+        if distance < min_dist then
+            min_dist = distance
+        end
+        if distance > max_dist then
+            max_dist = distance
         end
     end
 
-    -- Assign values to circle entity.
-    local circle_entity = entity:find_child("lasso_circle")
-    circle_entity.transform.position = juice.vec3.new(average.x, average.y, 0)
-    circle_entity.physics_circle.radius = radius
-    circle_entity.transform.scale = juice.vec2.new(radius / 512 * 2, radius / 512 * 2)
+    -- Calculate circle score. 
+    -- 1.0 = perfect circle. (All points equal distance from center)
+    local circle_score = min_dist / max_dist
+    juice.trace("score: " .. tostring(circle_score))
 
-    on_circle_complete()
+    -- Determine if this circle is good enough.
+    if circle_score > circle_threshold then
+        -- Assign values to circle entity.
+        local circle_entity = entity:find_child("lasso_circle")
+        circle_entity.transform.position = juice.vec3.new(center.x, center.y, circle_entity.transform.position.z)
+        circle_entity.transform.scale = juice.vec2.new(min_dist / 512 * 2, min_dist / 512 * 2)
+        circle_entity.physics_circle.radius = min_dist
+
+        circle_entity.scripts.circle_visual.show()
+
+        on_circle_complete(center, min_dist, circle_score)
+    end
 end
 
 function segment_added(number)
@@ -107,16 +131,14 @@ function segment_added(number)
 
     segment:add_component("physics_box")
     segment.physics_box.size = juice.vec2.new(length, 4)
-    segment.physics_box.category_bits = 4
+    segment.physics_box.category_bits = 2
+    segment.physics_box.category_mask = 4 | 8
     segment.physics_box.is_sensor = true
 end
 
-function validate_line()
-    -- todo: validate a line
-end
-
 function line_blocked()
-    juice.info("line got blocked!")
+    got_blocked = true
+    juice.trace("Line got blocked")
 end
 
 ---Start drawing the line.
@@ -125,6 +147,7 @@ function start_drawing()
     line_begin = get_mouse_pos()
     is_drawing = true
     can_complete = false
+    got_blocked = false
     last_segments = 1
 
     local segment_holder = create_entity("segment_holder")
