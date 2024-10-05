@@ -1,0 +1,76 @@
+{
+ "children": [
+  {
+   "children": null,
+   "components": {
+    "transform": {
+     "position": {
+      "x": 0.0,
+      "y": 8.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "type": 0
+    }
+   },
+   "id": 7,
+   "name": "attach"
+  }
+ ],
+ "components": {
+  "scripts": {
+   "scripts": [
+    {
+     "data": {
+      "values": null
+     },
+     "script": {
+      "path": "scripts/hat.lua"
+     }
+    }
+   ]
+  },
+  "sprite": {
+   "color": {
+    "a": 1.0,
+    "b": 1.0,
+    "g": 1.0,
+    "r": 1.0
+   },
+   "dimensions": {
+    "x": 16.0,
+    "y": 16.0
+   },
+   "offset": {
+    "x": 0.0,
+    "y": 8.0
+   },
+   "origin": {
+    "x": 80.0,
+    "y": 240.0
+   },
+   "texture": {
+    "path": "sprites/atlas.png"
+   }
+  },
+  "transform": {
+   "position": {
+    "x": -10000.0,
+    "y": -10000.0,
+    "z": 0.0
+   },
+   "rotation": 0.0,
+   "scale": {
+    "x": 1.0,
+    "y": 1.0
+   },
+   "type": 0
+  }
+ },
+ "id": 9,
+ "name": "hat"
+}

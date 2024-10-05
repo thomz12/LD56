@@ -9,7 +9,7 @@ function start()
                 bunny.transform.position.x, 
                 math.random() * 128 - 64,
                 bunny.transform.position.z
-                )
+            )
             juice.routine.wait_seconds(spawn_delay)
         end
     end)

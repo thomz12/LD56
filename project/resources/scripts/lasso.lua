@@ -120,10 +120,14 @@ function complete_circle()
         end
     end
 
+    if max_dist == 0 then
+        return
+    end
+
     -- Calculate circle score. 
     -- 1.0 = perfect circle. (All points equal distance from center)
     local circle_score = min_dist / max_dist
-    juice.trace("score: " .. tostring(circle_score))
+    juice.trace("score: " .. tostring(circle_score) .. " (" .. min_dist .. ", " .. max_dist .. ")")
 
     -- Determine if this circle is good enough.
     if circle_score > circle_threshold then

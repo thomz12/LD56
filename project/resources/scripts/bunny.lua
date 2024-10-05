@@ -38,12 +38,15 @@ local bunny_data = {
 local bunny = {}
 local captured = false
 
+local hats = 0
+
 function start()
 
     bunny = bunny_data[math.random(#bunny_data)]
 
     juice.routine.create(function()
         entity.sprite.origin = juice.vec2.new(0, 256 - (16 * bunny.sprite_row))
+        set_hats(math.random(0, 3))
         while true do
             local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
             juice.routine.wait_seconds_func(bunny.hop_duration, function(x)
@@ -63,11 +66,34 @@ function start()
     end)
 end
 
+function set_hats(count)
+    local parent = entity:find_child("hat_attach")
+    for i = 1, count do
+        local hat = spawn("prefabs/hat.jbprefab")
+        hat.name = "hat" .. tostring(i)
+        hat:set_parent(parent)
+        hat.transform.position = juice.vec3.new()
+
+        -- Next parent is the new hat
+        parent = hat:find_child("attach")
+    end
+    hats = count
+end
+
 --Call to capture the bunny.
 function capture()
-    captured = true
+    -- Lose hat if caught.
+    if hats > 0 then
+        local hat = entity:find_child("hat" .. tostring(hats))
+        hat.scripts.hat.lose_hat()
+        hats = hats - 1
+    else
+        captured = true
+    end
 end
 
 function update()
-    
+    if captured then
+        destroy_entity(entity)
+    end
 end
