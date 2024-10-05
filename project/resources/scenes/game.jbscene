@@ -38,7 +38,7 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 1948.0,
+      "x": 1871.0,
       "y": 1066.0
      },
      "enabled": true,
@@ -242,7 +242,18 @@
      "scripts": [
       {
        "data": {
-        "values": null
+        "values": [
+         {
+          "name": "spawning",
+          "type": 1,
+          "value": true
+         },
+         {
+          "name": "spawn_delay",
+          "type": 3,
+          "value": 2.0
+         }
+        ]
        },
        "script": {
         "path": "scripts/bunny_spawner.lua"

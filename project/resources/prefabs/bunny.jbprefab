@@ -16,7 +16,7 @@
    "density": 1.0,
    "friction": 0.5,
    "isSensor": false,
-   "radius": 8.0,
+   "radius": 5.0,
    "restitution": 0.10000000149011612
   },
   "scripts": {
@@ -47,8 +47,8 @@
     "r": 1.0
    },
    "dimensions": {
-    "x": 0.0,
-    "y": 0.0
+    "x": 16.0,
+    "y": 16.0
    },
    "offset": {
     "x": 0.0,
@@ -56,10 +56,10 @@
    },
    "origin": {
     "x": 0.0,
-    "y": 0.0
+    "y": 240.0
    },
    "texture": {
-    "path": "sprites/bunny.png"
+    "path": "sprites/atlas.png"
    }
   },
   "transform": {
@@ -76,6 +76,6 @@
    "type": 0
   }
  },
- "id": 1048578,
+ "id": 7,
  "name": "bunny"
 }
