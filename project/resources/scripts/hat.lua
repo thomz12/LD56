@@ -24,6 +24,8 @@ end
 
 function lose_hat()
     local world = entity.transform.world_position
+    
+    entity:set_parent(find_entity("root"))
     entity.transform.type = 2
     entity.transform.position = world
 
