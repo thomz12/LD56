@@ -3,6 +3,6 @@
  "engineVersion": "0.2.0",
  "globalScripts": null,
  "name": "LD56",
- "startScene": "scenes/main.jbscene",
+ "startScene": "scenes/game.jbscene",
  "version": "0.1.0"
 }

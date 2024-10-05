@@ -7,9 +7,9 @@
      "clear": true,
      "clearColor": {
       "a": 1.0,
-      "b": 0.3375527262687683,
-      "g": 0.3375527262687683,
-      "r": 0.3375527262687683
+      "b": 0.1882352977991104,
+      "g": 0.7450980544090271,
+      "r": 0.4156862795352936
      },
      "farPlane": 100.0,
      "height": 0,
@@ -17,7 +17,7 @@
      "nearPlane": 0.0,
      "useDepthStencil": true,
      "width": 0,
-     "zoom": 1.0
+     "zoom": 4.0
     },
     "transform": {
      "position": {
@@ -38,8 +38,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 255.0,
-      "y": 255.0
+      "x": 1968.0,
+      "y": 1069.0
      },
      "enabled": true,
      "inputType": 3,
@@ -63,6 +63,236 @@
    },
    "id": 1,
    "name": "camera"
+  },
+  {
+   "children": [
+    {
+     "children": null,
+     "components": {
+      "physics": {
+       "allowSleep": false,
+       "angularDamping": 0.009999999776482582,
+       "bodyType": 2,
+       "fixRotation": false,
+       "gravityScale": 0.0,
+       "linearDamping": 0.10000000149011612,
+       "projectile": false
+      },
+      "transform": {
+       "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+       },
+       "rotation": 0.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       },
+       "type": 2
+      }
+     },
+     "id": 4,
+     "name": "lasso_hitbox"
+    },
+    {
+     "children": null,
+     "components": {
+      "physics": {
+       "allowSleep": true,
+       "angularDamping": 0.009999999776482582,
+       "bodyType": 0,
+       "fixRotation": false,
+       "gravityScale": 1.0,
+       "linearDamping": 0.10000000149011612,
+       "projectile": false
+      },
+      "physics_circle": {
+       "categoryBits": 8,
+       "categoryMask": 65535,
+       "density": 1.0,
+       "friction": 0.5,
+       "isSensor": true,
+       "radius": 8.0,
+       "restitution": 0.10000000149011612
+      },
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "texture": {
+        "path": "sprites/circle.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+       },
+       "rotation": 0.0,
+       "scale": {
+        "x": 0.10000000149011612,
+        "y": 0.10000000149011612
+       },
+       "type": 2
+      }
+     },
+     "id": 6,
+     "name": "lasso_circle"
+    }
+   ],
+   "components": {
+    "line": {
+     "connectStyle": 1,
+     "local": false,
+     "points": null,
+     "texture": {
+      "path": "sprites/rope.png"
+     },
+     "textureStyle": 1
+    },
+    "scripts": {
+     "scripts": [
+      {
+       "data": {
+        "values": [
+         {
+          "name": "line_connect_threshold",
+          "type": 3,
+          "value": 8.0
+         },
+         {
+          "name": "max_radius",
+          "type": 3,
+          "value": 256.0
+         }
+        ]
+       },
+       "script": {
+        "path": "scripts/lasso.lua"
+       }
+      }
+     ]
+    },
+    "trail": {
+     "minimumMoveDistance": 2.0,
+     "startColor": {
+      "a": 1.0,
+      "b": 1.0,
+      "g": 1.0,
+      "r": 1.0
+     },
+     "startWidth": 4.0,
+     "timeDecay": 0.0
+    },
+    "transform": {
+     "position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "type": 2
+    }
+   },
+   "id": 3,
+   "name": "lasso"
+  },
+  {
+   "children": null,
+   "components": {
+    "physics": {
+     "allowSleep": true,
+     "angularDamping": 0.009999999776482582,
+     "bodyType": 0,
+     "fixRotation": false,
+     "gravityScale": 1.0,
+     "linearDamping": 0.10000000149011612,
+     "projectile": false
+    },
+    "physics_box": {
+     "categoryBits": 1,
+     "categoryMask": 4,
+     "density": 1.0,
+     "friction": 0.5,
+     "isSensor": false,
+     "restitution": 0.10000000149011612,
+     "size": {
+      "x": 8.0,
+      "y": 8.0
+     }
+    },
+    "scripts": {
+     "scripts": [
+      {
+       "data": {
+        "values": null
+       },
+       "script": {
+        "path": "scripts/blocker.lua"
+       }
+      }
+     ]
+    },
+    "sprite": {
+     "color": {
+      "a": 1.0,
+      "b": 1.0,
+      "g": 1.0,
+      "r": 1.0
+     },
+     "dimensions": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "offset": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "origin": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "texture": {
+      "path": "sprites/rope.png"
+     }
+    },
+    "transform": {
+     "position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 2.0,
+      "y": 2.0
+     },
+     "type": 0
+    }
+   },
+   "id": 5,
+   "name": "blocker"
   }
  ],
  "components": null,
