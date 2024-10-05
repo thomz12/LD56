@@ -99,17 +99,17 @@
      "children": null,
      "components": {
       "physics": {
-       "allowSleep": true,
+       "allowSleep": false,
        "angularDamping": 0.009999999776482582,
-       "bodyType": 0,
+       "bodyType": 2,
        "fixRotation": false,
-       "gravityScale": 1.0,
+       "gravityScale": 0.0,
        "linearDamping": 0.10000000149011612,
        "projectile": false
       },
       "physics_circle": {
        "categoryBits": 16,
-       "categoryMask": 65535,
+       "categoryMask": 32,
        "density": 1.0,
        "friction": 0.5,
        "isSensor": true,
@@ -120,7 +120,13 @@
        "scripts": [
         {
          "data": {
-          "values": null
+          "values": [
+           {
+            "name": "can_capture",
+            "type": 1,
+            "value": false
+           }
+          ]
          },
          "script": {
           "path": "scripts/circle_visual.lua"
@@ -277,6 +283,14 @@
    },
    "id": 2097154,
    "name": "bunny_spawner"
+  },
+  {
+   "id": 7,
+   "name": "bunny",
+   "prefab": {
+    "patch": [],
+    "path": "prefabs/bunny.jbprefab"
+   }
   }
  ],
  "components": null,

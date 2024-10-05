@@ -36,6 +36,7 @@ local bunny_data = {
 }
 
 local bunny = {}
+local captured = false
 
 function start()
 
@@ -60,4 +61,13 @@ function start()
             juice.routine.wait_seconds(math.random() * bunny.hop_wait_max - bunny.hop_wait_min)
         end
     end)
+end
+
+--Call to capture the bunny.
+function capture()
+    captured = true
+end
+
+function update()
+    
 end
