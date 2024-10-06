@@ -55,6 +55,7 @@ bunny_number = 0
 tutorial_bunny = false
 local bunny = nil
 local captured = false
+local row_pixel = 240
 
 local hats = 0
 
@@ -65,7 +66,8 @@ function start()
         else
             bunny = bunny_data[bunny_number]
         end
-        entity.sprite.origin = juice.vec2.new(0, 256 - (16 * bunny.sprite_row))
+        row_pixel = 256 - (16 * bunny.sprite_row)
+        entity.sprite.origin = juice.vec2.new(0, row_pixel)
         entity.transform.position.z = -10
         while not captured do
             local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
@@ -120,7 +122,9 @@ function capture()
         local hat = entity:find_child("hat" .. tostring(hats))
         hat.scripts.hat.lose_hat()
         hats = hats - 1
+        flash_bunny()
     elseif not captured then
+        flash_bunny()
         captured = true
         entity:add_component("line")
         entity.line["local"] = false
@@ -147,6 +151,14 @@ function capture()
             end)
         end)
     end
+end
+
+function flash_bunny()
+    juice.routine.create(function()
+        entity.sprite.origin.y = 48
+        juice.routine.wait_seconds(0.1)
+        entity.sprite.origin.y = row_pixel
+    end)
 end
 
 function update()

@@ -3,6 +3,10 @@ function start()
         entity.physics_box.on_collision_start = function(body1, body2)
             if string.find(body2.name, "segment") then
                 body2.parent.parent.parent.scripts.lasso.line_blocked()
+
+                if string.find(entity.name, "bunny") then
+                    entity.scripts.bunny.flash_bunny()
+                end
             end
         end
     end
@@ -11,6 +15,10 @@ function start()
         entity.physics_circle.on_collision_start = function(body1, body2)
             if string.find(body2.name, "segment") then
                 body2.parent.parent.parent.scripts.lasso.line_blocked()
+
+                if string.find(entity.name, "bunny") then
+                    entity.scripts.bunny.flash_bunny()
+                end
             end
         end
     end

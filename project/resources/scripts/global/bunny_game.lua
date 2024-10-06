@@ -1,5 +1,4 @@
 bunny_game = {}
-
 score = 0
 local selected_difficulty = 1
 
