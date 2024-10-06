@@ -5,6 +5,18 @@ local bunny = nil
 
 function start()
     start_y = entity.transform.position.y
+
+    juice.routine.create(function()
+        while not bunny do
+            entity.sprite.origin.x = 96
+            juice.routine.wait_seconds(5)
+            for i = 1, 6 do
+                entity.sprite.origin.x = 96 + 16 * i
+                juice.routine.wait_seconds(0.05)
+            end
+        end
+        entity.sprite.origin.x = 96
+    end)
 end
 
 function damp(start, target, smoothing, delta)

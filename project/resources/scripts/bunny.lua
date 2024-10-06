@@ -29,25 +29,44 @@ local bunny_data = {
         hop_distance = 32.0,
         hop_height = 8.0,
         hop_duration = 0.5,
-        hop_wait_min = 2.0,
-        hop_wait_max = 4.0,
+        hop_wait_min = 0.5,
+        hop_wait_max = 2.0,
         sprite_row = 2,
+    },
+    [5] = {
+        hop_distance = 16.0,
+        hop_height = 32.0,
+        hop_duration = 1.0,
+        hop_wait_min = 0.0,
+        hop_wait_max = 1.0,
+        sprite_row = 12,
+    },
+    [6] = {
+        hop_distance = 32.0,
+        hop_height = 8.0,
+        hop_duration = 0.25,
+        hop_wait_min = 1.0,
+        hop_wait_max = 3.0,
+        sprite_row = 5,
     },
 }
 
-local bunny = {}
+bunny_number = 0
+local bunny = nil
 local captured = false
 
 local hats = 0
 
 function start()
-
-    bunny = bunny_data[math.random(#bunny_data)]
-
     juice.routine.create(function()
+        if bunny_number == 0 then
+            juice.trace("creating random bunny")
+            bunny = bunny_data[math.random(#bunny_data)]
+        else
+            bunny = bunny_data[bunny_number]
+        end
         entity.sprite.origin = juice.vec2.new(0, 256 - (16 * bunny.sprite_row))
         entity.transform.position.z = -10
-        set_hats(math.random(0, 1))
         while not captured do
             local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
             juice.routine.wait_seconds_func(bunny.hop_duration, function(x)
@@ -66,7 +85,8 @@ function start()
                 end
             end)
             entity.sprite.origin.x = 0
-            juice.routine.wait_seconds(math.random() * bunny.hop_wait_max - bunny.hop_wait_min)
+            local wait_hop = juice.math.lerp(bunny.hop_wait_min, bunny.hop_wait_max, math.random())
+            juice.routine.wait_seconds(wait_hop)
         end
     end)
 end
@@ -101,11 +121,12 @@ function capture()
         entity.line.points:add(juice.line_element.new(juice.vec2.new(0, -256), 4))
         entity.line.texture = juice.resources:load_texture("sprites/rope.png")
 
-        entity.sprite.origin = juice.vec2.new(48, 240)
+        entity.sprite.origin.x = 48
 
         local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
         juice.routine.create(function()
             juice.routine.wait_seconds_func(1.0, function(x)
+                entity.sprite.origin.x = 48
                 entity.transform.position = juice.vec3.new(
                     juice.math.lerp(start_pos.x, 0, juice.ease.in_expo(x)),
                     juice.math.lerp(start_pos.y, -256, juice.ease.in_expo(x)),
