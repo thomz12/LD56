@@ -10,8 +10,8 @@ local bunny_data = {
         sprite_row = 1,
     },
     [2] = {
-        hop_distance = 8.0,
-        hop_height = 16.0,
+        hop_distance = 16.0,
+        hop_height = 8.0,
         hop_duration = 0.5,
         hop_wait_min = 1.0,
         hop_wait_max = 2.0,
@@ -52,6 +52,7 @@ local bunny_data = {
 }
 
 bunny_number = 0
+tutorial_bunny = false
 local bunny = nil
 local captured = false
 
@@ -60,8 +61,7 @@ local hats = 0
 function start()
     juice.routine.create(function()
         if bunny_number == 0 then
-            juice.trace("creating random bunny")
-            bunny = bunny_data[math.random(#bunny_data)]
+            bunny = bunny_data[1]
         else
             bunny = bunny_data[bunny_number]
         end
@@ -86,9 +86,16 @@ function start()
             end)
             entity.sprite.origin.x = 0
             local wait_hop = juice.math.lerp(bunny.hop_wait_min, bunny.hop_wait_max, math.random())
+            if tutorial_bunny and entity.transform.position.x > 0 then
+                return
+            end
             juice.routine.wait_seconds(wait_hop)
         end
     end)
+end
+
+function is_captured()
+    return captured
 end
 
 function set_hats(count)
@@ -123,6 +130,11 @@ function capture()
 
         entity.sprite.origin.x = 48
 
+        if tutorial_bunny then
+            destroy_entity(entity:find_child("preview_circle"))
+            destroy_entity(entity:find_child("hand_pivot"))
+        end
+
         local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
         juice.routine.create(function()
             juice.routine.wait_seconds_func(1.0, function(x)
@@ -143,5 +155,12 @@ function update()
             entity:remove_component("physics_circle")
         end
         entity.line.points[1].position = juice.vec2.new(entity.transform.position.x + 1, entity.transform.position.y - 4)
+        if entity.transform.position.y < -140 then
+            if tutorial_bunny then
+                find_entity("bunny_spawner").scripts.bunny_spawner.start_spawning()
+            end
+
+            destroy_entity(entity)
+        end
     end
 end

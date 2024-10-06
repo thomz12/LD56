@@ -19,15 +19,13 @@ local levels = {
     },
 }
 
-spawning = true
-local current = 3
+local spawning = true
 
-function start()
-
-
+function start_spawning()
+    find_entity("timer").scripts.timer.start_timer(120)
     juice.routine.create(function()
         while spawning do
-            local cur_level = levels[current]
+            local cur_level = levels[1]
             local bunny = spawn("prefabs/bunny.jbprefab")
             bunny.transform.position = juice.vec3.new(
                 bunny.transform.position.x, 
@@ -46,7 +44,7 @@ function start()
             end
 
             bunny.scripts.bunny.set_hats(hats)
-            juice.routine.wait_seconds(levels[current].spawn_delay)
+            juice.routine.wait_seconds(cur_level.spawn_delay)
         end
     end)
 end

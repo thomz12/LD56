@@ -3,54 +3,6 @@
   {
    "children": [
     {
-     "children": null,
-     "components": {
-      "ui_element": {
-       "anchor": {
-        "x": 0.5,
-        "y": 0.75
-       },
-       "dimensions": {
-        "x": 380.0,
-        "y": 64.0
-       },
-       "enabled": true,
-       "inputType": 3,
-       "offset": {
-        "x": 0.0,
-        "y": 0.0
-       },
-       "parentScale": {
-        "x": 0.0,
-        "y": 0.0
-       },
-       "pivot": {
-        "x": 0.5,
-        "y": 0.5
-       },
-       "rotation": 0.0
-      },
-      "ui_text": {
-       "color": {
-        "a": 1.0,
-        "b": 1.0,
-        "g": 1.0,
-        "r": 1.0
-       },
-       "font": {
-        "path": ""
-       },
-       "fontSize": 64.0,
-       "horizontal": 1,
-       "text": "Ludum Dare 56",
-       "vertical": 1,
-       "wrapText": false
-      }
-     },
-     "id": 3,
-     "name": "title_text"
-    },
-    {
      "children": [
       {
        "children": null,
@@ -65,10 +17,10 @@
           "y": 32.0
          },
          "enabled": true,
-         "inputType": 3,
+         "inputType": 0,
          "offset": {
           "x": 0.0,
-          "y": 12.0
+          "y": 10.0
          },
          "parentScale": {
           "x": 0.0,
@@ -88,11 +40,11 @@
           "r": 0.0
          },
          "font": {
-          "path": ""
+          "path": "fonts/poco.ttf"
          },
-         "fontSize": 48.0,
+         "fontSize": 32.0,
          "horizontal": 1,
-         "text": "Play",
+         "text": "Level 1",
          "vertical": 1,
          "wrapText": false
         }
@@ -120,8 +72,8 @@
         "y": 0.5
        },
        "dimensions": {
-        "x": 200.0,
-        "y": 64.0
+        "x": 100.0,
+        "y": 32.0
        },
        "enabled": true,
        "inputType": 2,
@@ -149,7 +101,209 @@
       }
      },
      "id": 1048578,
-     "name": "play_button"
+     "name": "play_level_1_button"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 0,
+         "offset": {
+          "x": 0.0,
+          "y": 10.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         },
+         "font": {
+          "path": "fonts/poco.ttf"
+         },
+         "fontSize": 32.0,
+         "horizontal": 1,
+         "text": "Level 2",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 7,
+       "name": "button_text"
+      }
+     ],
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/button.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 100.0,
+        "y": 32.0
+       },
+       "enabled": true,
+       "inputType": 2,
+       "offset": {
+        "x": 0.0,
+        "y": -40.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       }
+      }
+     },
+     "id": 6,
+     "name": "play_level_2_button"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 0,
+         "offset": {
+          "x": 0.0,
+          "y": 10.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         },
+         "font": {
+          "path": "fonts/poco.ttf"
+         },
+         "fontSize": 32.0,
+         "horizontal": 1,
+         "text": "Level 3",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 9,
+       "name": "button_text"
+      }
+     ],
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/button.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 100.0,
+        "y": 32.0
+       },
+       "enabled": true,
+       "inputType": 2,
+       "offset": {
+        "x": 0.0,
+        "y": -80.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       }
+      }
+     },
+     "id": 8,
+     "name": "play_level_3_button"
     }
    ],
    "components": {
@@ -157,9 +311,9 @@
      "clear": true,
      "clearColor": {
       "a": 1.0,
-      "b": 0.929411768913269,
-      "g": 0.5843137502670288,
-      "r": 0.3921568691730499
+      "b": 0.29113924503326416,
+      "g": 0.29113924503326416,
+      "r": 0.29113924503326416
      },
      "farPlane": 100.0,
      "height": 0,
@@ -188,8 +342,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 782.0,
-      "y": 420.0
+      "x": 1895.0,
+      "y": 1066.0
      },
      "enabled": true,
      "inputType": 3,

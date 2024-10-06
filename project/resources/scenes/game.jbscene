@@ -1,7 +1,201 @@
 {
  "children": [
   {
-   "children": null,
+   "children": [
+    {
+     "children": [
+      {
+       "children": [
+        {
+         "children": [
+          {
+           "children": null,
+           "components": {
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 0.5
+             },
+             "dimensions": {
+              "x": 32.0,
+              "y": 43.0
+             },
+             "enabled": true,
+             "inputType": 3,
+             "offset": {
+              "x": -1.0,
+              "y": 1.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 0.5
+             },
+             "rotation": 0.0
+            },
+            "ui_text": {
+             "color": {
+              "a": 1.0,
+              "b": 1.0,
+              "g": 1.0,
+              "r": 1.0
+             },
+             "font": {
+              "path": "fonts/poco.ttf"
+             },
+             "fontSize": 24.0,
+             "horizontal": 1,
+             "text": "02:00",
+             "vertical": 1,
+             "wrapText": false
+            }
+           },
+           "id": 1048593,
+           "name": "timer_text"
+          }
+         ],
+         "components": {
+          "ui_element": {
+           "anchor": {
+            "x": 0.5,
+            "y": 0.5
+           },
+           "dimensions": {
+            "x": 32.0,
+            "y": 32.0
+           },
+           "enabled": true,
+           "inputType": 3,
+           "offset": {
+            "x": 0.0,
+            "y": 1.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 0.5
+           },
+           "rotation": 0.0
+          },
+          "ui_text": {
+           "color": {
+            "a": 1.0,
+            "b": 0.0,
+            "g": 0.0,
+            "r": 0.0
+           },
+           "font": {
+            "path": "fonts/poco.ttf"
+           },
+           "fontSize": 24.0,
+           "horizontal": 1,
+           "text": "02:00",
+           "vertical": 1,
+           "wrapText": false
+          }
+         },
+         "id": 16,
+         "name": "timer_text_shadow"
+        }
+       ],
+       "components": {
+        "ui_9_slice": {
+         "border": 13.0,
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "image": {
+          "path": "sprites/ui_panel.png"
+         }
+        },
+        "ui_element": {
+         "anchor": {
+          "x": 0.0,
+          "y": 1.0
+         },
+         "dimensions": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "parentScale": {
+          "x": 1.0,
+          "y": 1.0
+         },
+         "pivot": {
+          "x": 0.0,
+          "y": 1.0
+         },
+         "rotation": 0.0
+        }
+       },
+       "id": 15,
+       "name": "timer_background"
+      }
+     ],
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/timer.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 1.0
+       },
+       "dimensions": {
+        "x": 60.0,
+        "y": 32.0
+       },
+       "enabled": true,
+       "inputType": 2,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 1.0
+       },
+       "rotation": 0.0
+      }
+     },
+     "id": 1048581,
+     "name": "timer"
+    },
+    {
+     "children": null,
+     "components": null,
+     "id": 24,
+     "name": "entity"
+    }
+   ],
    "components": {
     "camera": {
      "clear": true,
@@ -38,8 +232,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 1895.0,
-      "y": 1066.0
+      "x": 473.75,
+      "y": 266.5
      },
      "enabled": true,
      "inputType": 3,
@@ -58,7 +252,7 @@
      "rotation": 0.0
     },
     "ui_root": {
-     "scale": 1.0
+     "scale": 4.0
     }
    },
    "id": 1,
@@ -173,6 +367,49 @@
      },
      "id": 6,
      "name": "lasso_circle"
+    },
+    {
+     "children": null,
+     "components": {
+      "sprite": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "dimensions": {
+        "x": 16.0,
+        "y": 16.0
+       },
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "origin": {
+        "x": 128.0,
+        "y": 240.0
+       },
+       "texture": {
+        "path": "sprites/atlas.png"
+       }
+      },
+      "transform": {
+       "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+       },
+       "rotation": 0.0,
+       "scale": {
+        "x": 1.0,
+        "y": 1.0
+       },
+       "type": 2
+      }
+     },
+     "id": 26,
+     "name": "lasso_start"
     }
    ],
    "components": {
@@ -193,7 +430,7 @@
          {
           "name": "line_connect_threshold",
           "type": 3,
-          "value": 16.0
+          "value": 8.0
          },
          {
           "name": "max_radius",
@@ -248,13 +485,7 @@
      "scripts": [
       {
        "data": {
-        "values": [
-         {
-          "name": "spawning",
-          "type": 1,
-          "value": true
-         }
-        ]
+        "values": null
        },
        "script": {
         "path": "scripts/bunny_spawner.lua"
@@ -2566,6 +2797,183 @@
    },
    "id": 14,
    "name": "garden"
+  },
+  {
+   "id": 19,
+   "name": "tutorial_bunny",
+   "prefab": {
+    "patch": [
+     {
+      "op": "replace",
+      "path": "/children/0/id",
+      "value": 20
+     },
+     {
+      "op": "replace",
+      "path": "/children/1/id",
+      "value": 21
+     },
+     {
+      "op": "add",
+      "path": "/children/-",
+      "value": {
+       "children": [
+        {
+         "children": null,
+         "components": {
+          "sprite": {
+           "color": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+           },
+           "dimensions": {
+            "x": 16.0,
+            "y": 16.0
+           },
+           "offset": {
+            "x": 2.0,
+            "y": -6.0
+           },
+           "origin": {
+            "x": 112.0,
+            "y": 240.0
+           },
+           "texture": {
+            "path": "sprites/atlas.png"
+           }
+          },
+          "transform": {
+           "position": {
+            "x": 32.0,
+            "y": 0.0,
+            "z": -5.0
+           },
+           "rotation": 0.0,
+           "scale": {
+            "x": 1.0,
+            "y": 1.0
+           },
+           "type": 0
+          }
+         },
+         "id": 1048601,
+         "name": "hand_location"
+        }
+       ],
+       "components": {
+        "scripts": {
+         "scripts": [
+          {
+           "data": {
+            "values": null
+           },
+           "script": {
+            "path": "scripts/hand_animation.lua"
+           }
+          }
+         ]
+        },
+        "transform": {
+         "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": -2.0
+         },
+         "rotation": 0.0,
+         "scale": {
+          "x": 1.0,
+          "y": 1.0
+         },
+         "type": 0
+        }
+       },
+       "id": 23,
+       "name": "hand_pivot"
+      }
+     },
+     {
+      "op": "add",
+      "path": "/children/-",
+      "value": {
+       "children": null,
+       "components": {
+        "sprite": {
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "dimensions": {
+          "x": 64.0,
+          "y": 64.0
+         },
+         "offset": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "origin": {
+          "x": 112.0,
+          "y": 176.0
+         },
+         "texture": {
+          "path": "sprites/atlas.png"
+         }
+        },
+        "transform": {
+         "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": -71.0
+         },
+         "rotation": 0.0,
+         "scale": {
+          "x": 1.0,
+          "y": 1.0
+         },
+         "type": 0
+        }
+       },
+       "id": 22,
+       "name": "preview_circle"
+      }
+     },
+     {
+      "op": "replace",
+      "path": "/components/scripts/scripts/0/data/values",
+      "value": [
+       {
+        "name": "bunny_number",
+        "type": 3,
+        "value": 0.0
+       },
+       {
+        "name": "tutorial_bunny",
+        "type": 1,
+        "value": true
+       }
+      ]
+     },
+     {
+      "op": "replace",
+      "path": "/components/transform/position/x",
+      "value": -93.0
+     },
+     {
+      "op": "replace",
+      "path": "/id",
+      "value": 19
+     },
+     {
+      "op": "replace",
+      "path": "/name",
+      "value": "tutorial_bunny"
+     }
+    ],
+    "path": "prefabs/bunny.jbprefab"
+   }
   }
  ],
  "components": null,

@@ -202,6 +202,11 @@ function start_drawing()
     got_blocked = false
     last_segments = 1
 
+    local lasso_start = entity:find_child("lasso_start")
+    lasso_start.transform.position = juice.vec3.new(
+        line_begin.x, line_begin.y, 0)
+    lasso_start.sprite.color.a = 1
+
     local segment_holder = create_entity("segment_holder")
     segment_holder:set_parent(entity:find_child("lasso_hitbox"))
 end
@@ -210,6 +215,9 @@ end
 function end_drawing()
     clear_line()
     is_drawing = false
+
+    local lasso_start = entity:find_child("lasso_start")
+    lasso_start.sprite.color.a = 0
 end
 
 ---Clear the line.
