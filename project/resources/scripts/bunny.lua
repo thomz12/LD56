@@ -46,10 +46,13 @@ function start()
 
     juice.routine.create(function()
         entity.sprite.origin = juice.vec2.new(0, 256 - (16 * bunny.sprite_row))
-        set_hats(math.random(0, 3))
-        while true do
+        set_hats(math.random(0, 1))
+        while not captured do
             local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
             juice.routine.wait_seconds_func(bunny.hop_duration, function(x)
+                if captured then
+                    return
+                end
                 entity.transform.position = juice.vec3.new(
                 start_pos.x + bunny.hop_distance * x,
                 start_pos.y + bunny.hop_height * math.sin(x * math.pi), 0
@@ -87,13 +90,32 @@ function capture()
         local hat = entity:find_child("hat" .. tostring(hats))
         hat.scripts.hat.lose_hat()
         hats = hats - 1
-    else
+    elseif not captured then
         captured = true
+        entity:add_component("line")
+        entity.line["local"] = false
+        entity.line.points:add(juice.line_element.new(juice.vec2.new(0, 0), 4))
+        entity.line.points:add(juice.line_element.new(juice.vec2.new(0, -256), 4))
+        entity.line.texture = juice.resources:load_texture("sprites/rope.png")
+
+        local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
+        juice.routine.create(function()
+            juice.routine.wait_seconds_func(1.0, function(x)
+                entity.transform.position = juice.vec3.new(
+                    juice.math.lerp(start_pos.x, 0, juice.ease.in_expo(x)),
+                    juice.math.lerp(start_pos.y, -256, juice.ease.in_expo(x)),
+                    entity.transform.position.z
+                )
+            end)
+        end)
     end
 end
 
 function update()
     if captured then
-        destroy_entity(entity)
+        if entity:has_component("physics_circle") then
+            entity:remove_component("physics_circle")
+        end
+        entity.line.points[1].position = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
     end
 end

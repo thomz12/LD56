@@ -2406,7 +2406,7 @@
    "children": [
     {
      "id": 9,
-     "name": "carrot",
+     "name": "carrot1",
      "prefab": {
       "patch": [
        {
@@ -2418,6 +2418,11 @@
         "op": "replace",
         "path": "/id",
         "value": 9
+       },
+       {
+        "op": "replace",
+        "path": "/name",
+        "value": "carrot1"
        }
       ],
       "path": "prefabs/carrot.jbprefab"
@@ -2425,7 +2430,7 @@
     },
     {
      "id": 10,
-     "name": "carrot",
+     "name": "carrot2",
      "prefab": {
       "patch": [
        {
@@ -2437,6 +2442,11 @@
         "op": "replace",
         "path": "/id",
         "value": 10
+       },
+       {
+        "op": "replace",
+        "path": "/name",
+        "value": "carrot2"
        }
       ],
       "path": "prefabs/carrot.jbprefab"
@@ -2444,15 +2454,21 @@
     },
     {
      "id": 11,
-     "name": "carrot",
+     "name": "carrot3",
      "prefab": {
-      "patch": [],
+      "patch": [
+       {
+        "op": "replace",
+        "path": "/name",
+        "value": "carrot3"
+       }
+      ],
       "path": "prefabs/carrot.jbprefab"
      }
     },
     {
      "id": 12,
-     "name": "carrot",
+     "name": "carrot4",
      "prefab": {
       "patch": [
        {
@@ -2464,6 +2480,11 @@
         "op": "replace",
         "path": "/id",
         "value": 12
+       },
+       {
+        "op": "replace",
+        "path": "/name",
+        "value": "carrot4"
        }
       ],
       "path": "prefabs/carrot.jbprefab"
@@ -2471,7 +2492,7 @@
     },
     {
      "id": 13,
-     "name": "carrot",
+     "name": "carrot5",
      "prefab": {
       "patch": [
        {
@@ -2483,6 +2504,11 @@
         "op": "replace",
         "path": "/id",
         "value": 13
+       },
+       {
+        "op": "replace",
+        "path": "/name",
+        "value": "carrot5"
        }
       ],
       "path": "prefabs/carrot.jbprefab"
@@ -2515,7 +2541,13 @@
      "scripts": [
       {
        "data": {
-        "values": null
+        "values": [
+         {
+          "name": "carrots",
+          "type": 3,
+          "value": 5.0
+         }
+        ]
        },
        "script": {
         "path": "scripts/garden.lua"
@@ -2539,6 +2571,22 @@
    },
    "id": 14,
    "name": "garden"
+  },
+  {
+   "children": null,
+   "components": {
+    "audio": {
+     "audioClip": {
+      "path": "audio/bliep_0.wav"
+     },
+     "autoPlay": true,
+     "looping": false,
+     "pitch": 1.0,
+     "volume": 1.0
+    }
+   },
+   "id": 1048592,
+   "name": "audio_test"
   }
  ],
  "components": null,

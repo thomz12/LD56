@@ -98,6 +98,17 @@ function get_center_from_bounding_box()
     return juice.vec2.new((bottom_left.x + top_right.x) / 2, (bottom_left.y + top_right.y) / 2)
 end
 
+function show_text(text, duration, color)
+    local pos = get_mouse_pos()
+    local text_entity = spawn("prefabs/text.jbprefab")
+    text_entity.scripts.ingame_text.setup_text(text, duration, color)
+    text_entity.transform.position = juice.vec3.new(
+        pos.x,
+        pos.y,
+        text_entity.transform.position.z
+    )
+end
+
 ---Completed a valid circle.
 function complete_circle()
     
@@ -139,7 +150,19 @@ function complete_circle()
 
         circle_entity.scripts.circle_visual.show()
 
+        if circle_score > 0.8 then
+            show_text("Perfect Circle! x4 bonus", 1.0, juice.color.new(251 / 255, 242 / 255, 54 / 255, 1))
+        elseif circle_score > 0.75 then
+            show_text("Nice Circle! x3 bonus", 1.0, juice.color.new(55 / 255, 148 / 255, 110 / 255, 1))
+        elseif circle_score > 0.7 then
+            show_text("Ok Circle! x2 bonus", 1.0, juice.color.new(155 / 255, 173 / 255, 183 / 255, 1))
+        else
+            show_text("Circle!", 1.0, juice.color.new(1, 1, 1, 1))
+        end
+
         on_circle_complete(center, min_dist, circle_score)
+    else
+        show_text("Not a circle!", 1.0, juice.color.new(217 / 255, 87 / 255, 99 / 255, 1))
     end
 end
 
@@ -167,7 +190,7 @@ end
 
 function line_blocked()
     got_blocked = true
-    juice.trace("Line got blocked")
+    show_text("Broken!", 1.0, juice.color.new(217 / 255, 87 / 255, 99 / 255, 1))
 end
 
 ---Start drawing the line.
