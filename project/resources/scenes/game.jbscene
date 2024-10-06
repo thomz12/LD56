@@ -38,7 +38,7 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 2011.0,
+      "x": 1995.0,
       "y": 1066.0
      },
      "enabled": true,
@@ -875,8 +875,8 @@
       -1,
       -1,
       -1,
-      177,
-      177,
+      113,
+      114,
       177,
       177,
       177,
@@ -907,8 +907,8 @@
       -1,
       -1,
       -1,
-      177,
-      177,
+      129,
+      130,
       177,
       177,
       177,
@@ -939,8 +939,8 @@
       -1,
       -1,
       -1,
-      177,
-      177,
+      145,
+      146,
       177,
       177,
       177,
@@ -1757,7 +1757,7 @@
       0,
       0,
       -1,
-      246,
+      0,
       -1,
       -1,
       -1,
@@ -1821,7 +1821,7 @@
       -1,
       0,
       -1,
-      246,
+      0,
       -1,
       -1,
       -1,
@@ -1885,7 +1885,7 @@
       -1,
       0,
       -1,
-      246,
+      0,
       -1,
       -1,
       -1,
@@ -1949,7 +1949,7 @@
       -1,
       0,
       -1,
-      246,
+      0,
       -1,
       -1,
       -1,
@@ -2013,7 +2013,7 @@
       -1,
       0,
       -1,
-      246,
+      0,
       -1,
       -1,
       -1,
@@ -2401,6 +2401,144 @@
    },
    "id": 8,
    "name": "tilemap_top"
+  },
+  {
+   "children": [
+    {
+     "id": 9,
+     "name": "carrot",
+     "prefab": {
+      "patch": [
+       {
+        "op": "replace",
+        "path": "/components/transform/position/y",
+        "value": 48.0
+       },
+       {
+        "op": "replace",
+        "path": "/id",
+        "value": 9
+       }
+      ],
+      "path": "prefabs/carrot.jbprefab"
+     }
+    },
+    {
+     "id": 10,
+     "name": "carrot",
+     "prefab": {
+      "patch": [
+       {
+        "op": "replace",
+        "path": "/components/transform/position/y",
+        "value": 24.0
+       },
+       {
+        "op": "replace",
+        "path": "/id",
+        "value": 10
+       }
+      ],
+      "path": "prefabs/carrot.jbprefab"
+     }
+    },
+    {
+     "id": 11,
+     "name": "carrot",
+     "prefab": {
+      "patch": [],
+      "path": "prefabs/carrot.jbprefab"
+     }
+    },
+    {
+     "id": 12,
+     "name": "carrot",
+     "prefab": {
+      "patch": [
+       {
+        "op": "replace",
+        "path": "/components/transform/position/y",
+        "value": -24.0
+       },
+       {
+        "op": "replace",
+        "path": "/id",
+        "value": 12
+       }
+      ],
+      "path": "prefabs/carrot.jbprefab"
+     }
+    },
+    {
+     "id": 13,
+     "name": "carrot",
+     "prefab": {
+      "patch": [
+       {
+        "op": "replace",
+        "path": "/components/transform/position/y",
+        "value": -48.0
+       },
+       {
+        "op": "replace",
+        "path": "/id",
+        "value": 13
+       }
+      ],
+      "path": "prefabs/carrot.jbprefab"
+     }
+    }
+   ],
+   "components": {
+    "physics": {
+     "allowSleep": false,
+     "angularDamping": 0.009999999776482582,
+     "bodyType": 2,
+     "fixRotation": false,
+     "gravityScale": 0.0,
+     "linearDamping": 0.10000000149011612,
+     "projectile": false
+    },
+    "physics_box": {
+     "categoryBits": 64,
+     "categoryMask": 8,
+     "density": 1.0,
+     "friction": 0.5,
+     "isSensor": true,
+     "restitution": 0.10000000149011612,
+     "size": {
+      "x": 16.0,
+      "y": 192.0
+     }
+    },
+    "scripts": {
+     "scripts": [
+      {
+       "data": {
+        "values": null
+       },
+       "script": {
+        "path": "scripts/garden.lua"
+       }
+      }
+     ]
+    },
+    "transform": {
+     "position": {
+      "x": 116.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "rotation": 0.0,
+     "scale": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "type": 0
+    }
+   },
+   "id": 14,
+   "name": "garden"
   }
  ],
  "components": null,

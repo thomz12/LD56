@@ -11,9 +11,9 @@ end
 function show()
     can_capture = true
     juice.routine.create(function()
-        juice.routine.wait_seconds_func(0.25, function(x)
-            entity.sprite.color.a = 1.0 - x
-        end)
+        entity.sprite.color.a = 1
+        juice.routine.wait_seconds(0.25)
+        entity.sprite.color.a = 0
         can_capture = false
     end)
 end

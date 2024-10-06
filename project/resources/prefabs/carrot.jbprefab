@@ -1,0 +1,55 @@
+{
+ "children": null,
+ "components": {
+  "scripts": {
+   "scripts": [
+    {
+     "data": {
+      "values": null
+     },
+     "script": {
+      "path": "scripts/carrot.lua"
+     }
+    }
+   ]
+  },
+  "sprite": {
+   "color": {
+    "a": 1.0,
+    "b": 1.0,
+    "g": 1.0,
+    "r": 1.0
+   },
+   "dimensions": {
+    "x": 16.0,
+    "y": 16.0
+   },
+   "offset": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "origin": {
+    "x": 96.0,
+    "y": 240.0
+   },
+   "texture": {
+    "path": "sprites/tilemap.png"
+   }
+  },
+  "transform": {
+   "position": {
+    "x": 116.0,
+    "y": 0.0,
+    "z": 0.0
+   },
+   "rotation": 0.0,
+   "scale": {
+    "x": 1.0,
+    "y": 1.0
+   },
+   "type": 2
+  }
+ },
+ "id": 11,
+ "name": "carrot"
+}
