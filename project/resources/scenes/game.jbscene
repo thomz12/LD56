@@ -38,7 +38,7 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 1995.0,
+      "x": 1895.0,
       "y": 1066.0
      },
      "enabled": true,
@@ -253,11 +253,6 @@
           "name": "spawning",
           "type": 1,
           "value": true
-         },
-         {
-          "name": "spawn_delay",
-          "type": 3,
-          "value": 2.0
          }
         ]
        },
@@ -2571,22 +2566,6 @@
    },
    "id": 14,
    "name": "garden"
-  },
-  {
-   "children": null,
-   "components": {
-    "audio": {
-     "audioClip": {
-      "path": "audio/bliep_0.wav"
-     },
-     "autoPlay": true,
-     "looping": false,
-     "pitch": 1.0,
-     "volume": 1.0
-    }
-   },
-   "id": 1048592,
-   "name": "audio_test"
   }
  ],
  "components": null,
