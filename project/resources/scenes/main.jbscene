@@ -316,12 +316,12 @@
       "r": 0.29113924503326416
      },
      "farPlane": 100.0,
-     "height": 0,
+     "height": 384,
      "main": true,
      "nearPlane": 0.0,
      "useDepthStencil": true,
-     "width": 0,
-     "zoom": 1.0
+     "width": 512,
+     "zoom": 2.0
     },
     "transform": {
      "position": {
@@ -342,8 +342,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 1895.0,
-      "y": 1066.0
+      "x": 512.0,
+      "y": 384.0
      },
      "enabled": true,
      "inputType": 3,

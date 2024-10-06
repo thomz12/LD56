@@ -5,6 +5,6 @@
   "scripts/global/bunny_game.lua"
  ],
  "name": "LD56",
- "startScene": "scenes/game.jbscene",
+ "startScene": "scenes/main.jbscene",
  "version": "0.1.0"
 }
