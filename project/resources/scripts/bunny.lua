@@ -46,6 +46,7 @@ function start()
 
     juice.routine.create(function()
         entity.sprite.origin = juice.vec2.new(0, 256 - (16 * bunny.sprite_row))
+        entity.transform.position.z = -10
         set_hats(math.random(0, 1))
         while not captured do
             local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
@@ -54,8 +55,9 @@ function start()
                     return
                 end
                 entity.transform.position = juice.vec3.new(
-                start_pos.x + bunny.hop_distance * x,
-                start_pos.y + bunny.hop_height * math.sin(x * math.pi), 0
+                    start_pos.x + bunny.hop_distance * x,
+                    start_pos.y + bunny.hop_height * math.sin(x * math.pi),
+                    entity.transform.position.z
                 )
                 if (x < 0.5) then
                     entity.sprite.origin.x = 16
@@ -71,11 +73,12 @@ end
 
 function set_hats(count)
     local parent = entity:find_child("hat_attach")
+    local depth_offset = 31
     for i = 1, count do
         local hat = spawn("prefabs/hat.jbprefab")
         hat.name = "hat" .. tostring(i)
         hat:set_parent(parent)
-        hat.transform.position = juice.vec3.new()
+        hat.transform.position = juice.vec3.new(0, 0, depth_offset)
 
         -- Next parent is the new hat
         parent = hat:find_child("attach")
@@ -98,6 +101,8 @@ function capture()
         entity.line.points:add(juice.line_element.new(juice.vec2.new(0, -256), 4))
         entity.line.texture = juice.resources:load_texture("sprites/rope.png")
 
+        entity.sprite.origin = juice.vec2.new(48, 240)
+
         local start_pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
         juice.routine.create(function()
             juice.routine.wait_seconds_func(1.0, function(x)
@@ -116,6 +121,6 @@ function update()
         if entity:has_component("physics_circle") then
             entity:remove_component("physics_circle")
         end
-        entity.line.points[1].position = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
+        entity.line.points[1].position = juice.vec2.new(entity.transform.position.x + 1, entity.transform.position.y - 4)
     end
 end
