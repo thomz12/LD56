@@ -190,10 +190,534 @@
      "name": "timer"
     },
     {
-     "children": null,
-     "components": null,
+     "children": [
+      {
+       "children": [
+        {
+         "children": null,
+         "components": {
+          "ui_element": {
+           "anchor": {
+            "x": 0.5,
+            "y": 0.5
+           },
+           "dimensions": {
+            "x": 32.0,
+            "y": 64.0
+           },
+           "enabled": true,
+           "inputType": 3,
+           "offset": {
+            "x": 0.0,
+            "y": 5.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 0.5
+           },
+           "rotation": 0.0
+          },
+          "ui_text": {
+           "color": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+           },
+           "font": {
+            "path": "fonts/poco.ttf"
+           },
+           "fontSize": 32.0,
+           "horizontal": 1,
+           "text": "Complete!",
+           "vertical": 1,
+           "wrapText": false
+          }
+         },
+         "id": 29,
+         "name": "header_text"
+        },
+        {
+         "children": [
+          {
+           "children": [
+            {
+             "children": null,
+             "components": {
+              "ui_element": {
+               "anchor": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "dimensions": {
+                "x": 32.0,
+                "y": 32.0
+               },
+               "enabled": true,
+               "inputType": 3,
+               "offset": {
+                "x": 0.0,
+                "y": 3.0
+               },
+               "parentScale": {
+                "x": 0.0,
+                "y": 0.0
+               },
+               "pivot": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "rotation": 0.0
+              },
+              "ui_text": {
+               "color": {
+                "a": 1.0,
+                "b": 1.0,
+                "g": 1.0,
+                "r": 1.0
+               },
+               "font": {
+                "path": "fonts/poco.ttf"
+               },
+               "fontSize": 16.0,
+               "horizontal": 1,
+               "text": "Continue",
+               "vertical": 1,
+               "wrapText": false
+              }
+             },
+             "id": 1048612,
+             "name": "status_message"
+            }
+           ],
+           "components": {
+            "scripts": {
+             "scripts": [
+              {
+               "data": {
+                "values": null
+               },
+               "script": {
+                "path": "scripts/light_button.lua"
+               }
+              }
+             ]
+            },
+            "ui_9_slice": {
+             "border": 5.0,
+             "color": {
+              "a": 1.0,
+              "b": 1.0,
+              "g": 1.0,
+              "r": 1.0
+             },
+             "image": {
+              "path": "sprites/ui_button_lightest.png"
+             }
+            },
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 0.0
+             },
+             "dimensions": {
+              "x": 120.0,
+              "y": 22.0
+             },
+             "enabled": true,
+             "inputType": 2,
+             "offset": {
+              "x": 0.0,
+              "y": 3.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 0.0
+             },
+             "rotation": 0.0
+            }
+           },
+           "id": 30,
+           "name": "button_accept"
+          },
+          {
+           "children": [
+            {
+             "children": null,
+             "components": {
+              "ui_element": {
+               "anchor": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "dimensions": {
+                "x": 32.0,
+                "y": 32.0
+               },
+               "enabled": true,
+               "inputType": 3,
+               "offset": {
+                "x": 0.0,
+                "y": 3.0
+               },
+               "parentScale": {
+                "x": 0.0,
+                "y": 0.0
+               },
+               "pivot": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "rotation": 0.0
+              },
+              "ui_text": {
+               "color": {
+                "a": 1.0,
+                "b": 1.0,
+                "g": 1.0,
+                "r": 1.0
+               },
+               "font": {
+                "path": "fonts/poco.ttf"
+               },
+               "fontSize": 16.0,
+               "horizontal": 1,
+               "text": "Score 1337",
+               "vertical": 1,
+               "wrapText": false
+              }
+             },
+             "id": 32,
+             "name": "final_score_text"
+            }
+           ],
+           "components": {
+            "ui_9_slice": {
+             "border": 5.0,
+             "color": {
+              "a": 1.0,
+              "b": 1.0,
+              "g": 1.0,
+              "r": 1.0
+             },
+             "image": {
+              "path": "sprites/ui_button_light.png"
+             }
+            },
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 1.0
+             },
+             "dimensions": {
+              "x": 120.0,
+              "y": 22.0
+             },
+             "enabled": true,
+             "inputType": 3,
+             "offset": {
+              "x": 0.0,
+              "y": -15.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 1.0
+             },
+             "rotation": 0.0
+            }
+           },
+           "id": 31,
+           "name": "score_display"
+          },
+          {
+           "children": [
+            {
+             "children": null,
+             "components": {
+              "ui_element": {
+               "anchor": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "dimensions": {
+                "x": 32.0,
+                "y": 32.0
+               },
+               "enabled": true,
+               "inputType": 3,
+               "offset": {
+                "x": 0.0,
+                "y": 3.0
+               },
+               "parentScale": {
+                "x": 0.0,
+                "y": 0.0
+               },
+               "pivot": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "rotation": 0.0
+              },
+              "ui_text": {
+               "color": {
+                "a": 1.0,
+                "b": 1.0,
+                "g": 1.0,
+                "r": 1.0
+               },
+               "font": {
+                "path": "fonts/poco.ttf"
+               },
+               "fontSize": 16.0,
+               "horizontal": 1,
+               "text": "Bunnies Caught: 99",
+               "vertical": 1,
+               "wrapText": false
+              }
+             },
+             "id": 34,
+             "name": "bunnies_text"
+            }
+           ],
+           "components": {
+            "ui_9_slice": {
+             "border": 5.0,
+             "color": {
+              "a": 1.0,
+              "b": 1.0,
+              "g": 1.0,
+              "r": 1.0
+             },
+             "image": {
+              "path": "sprites/ui_button_light.png"
+             }
+            },
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 1.0
+             },
+             "dimensions": {
+              "x": 120.0,
+              "y": 22.0
+             },
+             "enabled": true,
+             "inputType": 3,
+             "offset": {
+              "x": 0.0,
+              "y": -39.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 1.0
+             },
+             "rotation": 0.0
+            }
+           },
+           "id": 33,
+           "name": "bunnies_caught_display"
+          },
+          {
+           "children": null,
+           "components": {
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 1.0
+             },
+             "dimensions": {
+              "x": 32.0,
+              "y": 32.0
+             },
+             "enabled": true,
+             "inputType": 3,
+             "offset": {
+              "x": 0.0,
+              "y": -52.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 1.0
+             },
+             "rotation": 0.0
+            },
+            "ui_text": {
+             "color": {
+              "a": 1.0,
+              "b": 1.0,
+              "g": 1.0,
+              "r": 1.0
+             },
+             "font": {
+              "path": "fonts/poco.ttf"
+             },
+             "fontSize": 16.0,
+             "horizontal": 1,
+             "text": "Uploading score...",
+             "vertical": 1,
+             "wrapText": false
+            }
+           },
+           "id": 1048611,
+           "name": "status_message"
+          }
+         ],
+         "components": {
+          "ui_9_slice": {
+           "border": 14.0,
+           "color": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+           },
+           "image": {
+            "path": "sprites/ui_panel.png"
+           }
+          },
+          "ui_element": {
+           "anchor": {
+            "x": 0.5,
+            "y": 0.0
+           },
+           "dimensions": {
+            "x": 130.0,
+            "y": 111.0
+           },
+           "enabled": true,
+           "inputType": 3,
+           "offset": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 1.0
+           },
+           "rotation": 0.0
+          }
+         },
+         "id": 27,
+         "name": "game_over_screen"
+        }
+       ],
+       "components": {
+        "ui_9_slice": {
+         "border": 14.0,
+         "color": {
+          "a": 1.0,
+          "b": 1.0,
+          "g": 1.0,
+          "r": 1.0
+         },
+         "image": {
+          "path": "sprites/ui_panel.png"
+         }
+        },
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "dimensions": {
+          "x": 141.0,
+          "y": 42.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 160.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 1.0
+         },
+         "rotation": 0.0
+        }
+       },
+       "id": 1048604,
+       "name": "game_over_screen_header"
+      }
+     ],
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/result_ui.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 1.0,
+        "y": 1.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 0.0,
+        "b": 0.0,
+        "g": 0.0,
+        "r": 0.0
+       }
+      }
+     },
      "id": 24,
-     "name": "fade_panel"
+     "name": "result_ui"
     }
    ],
    "components": {
@@ -206,12 +730,12 @@
       "r": 0.8509804010391235
      },
      "farPlane": 100.0,
-     "height": 0,
+     "height": 384,
      "main": true,
      "nearPlane": 0.0,
      "useDepthStencil": true,
-     "width": 0,
-     "zoom": 4.0
+     "width": 512,
+     "zoom": 2.0
     },
     "transform": {
      "position": {
@@ -232,8 +756,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 473.75,
-      "y": 266.5
+      "x": 256.0,
+      "y": 192.0
      },
      "enabled": true,
      "inputType": 3,
@@ -252,7 +776,7 @@
      "rotation": 0.0
     },
     "ui_root": {
-     "scale": 4.0
+     "scale": 2.0
     }
    },
    "id": 1,
@@ -2974,6 +3498,22 @@
     ],
     "path": "prefabs/bunny.jbprefab"
    }
+  },
+  {
+   "children": null,
+   "components": {
+    "audio": {
+     "audioClip": {
+      "path": "audio/bgm.mp3"
+     },
+     "autoPlay": true,
+     "looping": true,
+     "pitch": 1.0,
+     "volume": 0.10000000149011612
+    }
+   },
+   "id": 37,
+   "name": "background_music"
   }
  ],
  "components": null,

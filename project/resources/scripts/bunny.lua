@@ -123,8 +123,11 @@ function capture()
         hat.scripts.hat.lose_hat()
         hats = hats - 1
         flash_bunny()
+        bunny_game.add_score(100)
     elseif not captured then
         flash_bunny()
+        bunny_game.add_score(200)
+        bunny_game.catch_bunny()
         captured = true
         entity:add_component("line")
         entity.line["local"] = false

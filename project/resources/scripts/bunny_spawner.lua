@@ -25,7 +25,7 @@ function start_spawning()
     find_entity("timer").scripts.timer.start_timer(120)
     juice.routine.create(function()
         while spawning do
-            local cur_level = levels[1]
+            local cur_level = levels[bunny_game.get_current_difficulty()]
             local bunny = spawn("prefabs/bunny.jbprefab")
             bunny.transform.position = juice.vec3.new(
                 bunny.transform.position.x, 
