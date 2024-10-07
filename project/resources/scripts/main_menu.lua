@@ -9,6 +9,7 @@ end
 
 local max_reached = 1
 local has_username = true
+local playfab_username = ""
 
 function start()
     if not playfab.signed_in then
@@ -21,21 +22,45 @@ function start()
         playfab.sign_in(id, function(login_success, login_body)
             if login_success then
                 if not login_body.NewlyCreated then
+                    juice.info("Returning account")
+                    -- Get user account.
                     playfab.get_player_profile(function(get_profile_success, get_profile_body)
                         if get_profile_success then
                             if not get_profile_body.PlayerProfile.DisplayName then
                                 has_username = false
                                 juice.info("User has no username!")
-                                playfab.set_display_name("Wrangler #" .. math.random(1000, 9999), function()
-
+                                -- Try to create random username.
+                                local new_username = "Wrangler #" .. math.random(1000, 9999)
+                                playfab.set_display_name(new_username, function(name_result, name_body)
+                                    if name_result then
+                                        bunny_game.set_username(new_username)
+                                        entity:find_child("player_name_text").ui_text.text = "Welcome, " .. new_username 
+                                    end
                                 end)
+                            else
+                                juice.info("Got username")
+                                bunny_game.set_username(get_profile_body.PlayerProfile.DisplayName)
+                                entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
                             end
+                        end
+                    end)
+                else
+                    -- New account
+                    local new_username = "Wrangler #" .. math.random(1000, 9999)
+                    juice.prompt("Username for leaderboards:", "new_username")
+                    playfab.set_display_name(new_username, function(name_result, name_body)
+                        if name_result then
+                            bunny_game.set_username(new_username)
+                            entity:find_child("player_name_text").ui_text.text = "Welcome, " .. new_username
                         end
                     end)
                 end
             end
         end)
+    else
+        entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
     end
+
     find_entity("spawner").scripts.bunny_spawner.start_spawning_main_menu()
     local max_string = juice.load_string("max_reached")
     if not max_string or max_string == "" then
@@ -81,6 +106,15 @@ function start()
             juice.routine.wait_seconds_func(0.5, function(x)
                 find_entity("ui_container").ui_element.anchor.x = juice.math.lerp(1.5, 0.5, juice.ease.in_out_expo(x))
             end)
+        end)
+    end
+    entity:find_child("name_edit_button").scripts.light_button.on_click = function()
+        local new_name = juice.prompt("Username for leaderboards:", bunny_game.get_username())
+        playfab.set_display_name(new_name, function(name_result, name_body)
+            if name_result then
+                bunny_game.set_username(name_body.DisplayName)
+                entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
+            end
         end)
     end
 end

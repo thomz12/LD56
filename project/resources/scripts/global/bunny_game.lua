@@ -10,6 +10,14 @@ function bunny_game.start_game(difficulty)
     selected_difficulty = difficulty
 end
 
+function bunny_game.get_username()
+    return bunny_game.username
+end
+
+function bunny_game.set_username(username)
+    bunny_game.username = username
+end
+
 function bunny_game.add_score(score)
     total_score = total_score + score
 end
