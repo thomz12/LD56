@@ -127,19 +127,19 @@ function show_text(text, duration)
 end
 
 --Call to capture the bunny.
-function capture()
+function capture(multiplier)
     -- Lose hat if caught.
     if hats > 0 then
         local hat = entity:find_child("hat" .. tostring(hats))
         hat.scripts.hat.lose_hat()
         hats = hats - 1
         flash_bunny()
-        bunny_game.add_score(100)
-        show_text("+100", 1.0)
+        bunny_game.add_score(100 * multiplier)
+        show_text("+" .. (100 * multiplier), 1.0)
     elseif not captured then
         flash_bunny()
-        show_text("+200", 1.0)
-        bunny_game.add_score(200)
+        show_text("+" .. (200 * multiplier), 1.0)
+        bunny_game.add_score(200 * multiplier)
         bunny_game.catch_bunny()
         captured = true
         entity:add_component("line")

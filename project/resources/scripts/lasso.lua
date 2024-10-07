@@ -162,22 +162,26 @@ function complete_circle()
         circle_entity.transform.scale = juice.vec2.new(min_dist / 512 * 2, min_dist / 512 * 2)
         circle_entity.physics_circle.radius = min_dist
 
-        circle_entity.scripts.circle_visual.show()
+        local multiplier = 1
 
         if circle_score > 0.8 then
-            show_text("Perfect Circle! x4 bonus", 1.0, juice.color.new(251 / 255, 242 / 255, 54 / 255, 1))
+            show_text("Perfect Circle! x4", 1.0, juice.color.new(251 / 255, 242 / 255, 54 / 255, 1))
             play_audio("bliep3")
+            multiplier = 4
         elseif circle_score > 0.75 then
-            show_text("Nice Circle! x3 bonus", 1.0, juice.color.new(99 / 255, 255 / 255, 255 / 255, 1))
+            show_text("Nice Circle! x3", 1.0, juice.color.new(99 / 255, 255 / 255, 255 / 255, 1))
             play_audio("bliep2")
+            multiplier = 3
         elseif circle_score > 0.7 then
-            show_text("Ok Circle! x2 bonus", 1.0, juice.color.new(106 / 255, 190 / 255, 48 / 255, 1))
+            show_text("Ok Circle! x2", 1.0, juice.color.new(106 / 255, 190 / 255, 48 / 255, 1))
             play_audio("bliep1")
+            multiplier = 2
         else
             show_text("Circle!", 1.0, juice.color.new(1, 1, 1, 1))
             play_audio("bliep0")
         end
 
+        circle_entity.scripts.circle_visual.show(multiplier)
         on_circle_complete(center, min_dist, circle_score)
     else
         show_text("Not a circle!", 1.0, juice.color.new(217 / 255, 87 / 255, 99 / 255, 1))
