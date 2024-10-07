@@ -824,6 +824,15 @@
     {
      "children": null,
      "components": {
+      "audio": {
+       "audioClip": {
+        "path": "audio/bliep1.wav"
+       },
+       "autoPlay": false,
+       "looping": false,
+       "pitch": 1.0,
+       "volume": 1.0
+      },
       "physics": {
        "allowSleep": false,
        "angularDamping": 0.009999999776482582,
@@ -942,6 +951,70 @@
      },
      "id": 26,
      "name": "lasso_start"
+    },
+    {
+     "children": null,
+     "components": {
+      "audio": {
+       "audioClip": {
+        "path": "audio/succes3.wav"
+       },
+       "autoPlay": false,
+       "looping": false,
+       "pitch": 1.0,
+       "volume": 0.5
+      }
+     },
+     "id": 1048594,
+     "name": "bliep0"
+    },
+    {
+     "children": null,
+     "components": {
+      "audio": {
+       "audioClip": {
+        "path": "audio/succes4.wav"
+       },
+       "autoPlay": false,
+       "looping": false,
+       "pitch": 1.0,
+       "volume": 0.5
+      }
+     },
+     "id": 38,
+     "name": "bliep1"
+    },
+    {
+     "children": null,
+     "components": {
+      "audio": {
+       "audioClip": {
+        "path": "audio/succes5.wav"
+       },
+       "autoPlay": false,
+       "looping": false,
+       "pitch": 1.0,
+       "volume": 0.5
+      }
+     },
+     "id": 39,
+     "name": "bliep2"
+    },
+    {
+     "children": null,
+     "components": {
+      "audio": {
+       "audioClip": {
+        "path": "audio/succes6.wav"
+       },
+       "autoPlay": false,
+       "looping": false,
+       "pitch": 1.0,
+       "volume": 0.5
+      }
+     },
+     "id": 40,
+     "name": "bliep3"
     }
    ],
    "components": {
@@ -3274,6 +3347,15 @@
     }
    ],
    "components": {
+    "audio": {
+     "audioClip": {
+      "path": "audio/fail1.wav"
+     },
+     "autoPlay": false,
+     "looping": false,
+     "pitch": 1.0,
+     "volume": 0.5
+    },
     "physics": {
      "allowSleep": false,
      "angularDamping": 0.009999999776482582,
@@ -3474,19 +3556,33 @@
      },
      {
       "op": "replace",
-      "path": "/components/scripts/scripts/0/data/values",
-      "value": [
-       {
-        "name": "bunny_number",
-        "type": 3,
-        "value": 0.0
-       },
-       {
-        "name": "tutorial_bunny",
-        "type": 1,
-        "value": true
-       }
-      ]
+      "path": "/components/scripts/scripts/0/data/values/0/name",
+      "value": "bunny_number"
+     },
+     {
+      "op": "replace",
+      "path": "/components/scripts/scripts/0/data/values/0/type",
+      "value": 3
+     },
+     {
+      "op": "replace",
+      "path": "/components/scripts/scripts/0/data/values/0/value",
+      "value": 0.0
+     },
+     {
+      "op": "replace",
+      "path": "/components/scripts/scripts/0/data/values/1/name",
+      "value": "tutorial_bunny"
+     },
+     {
+      "op": "replace",
+      "path": "/components/scripts/scripts/0/data/values/1/type",
+      "value": 1
+     },
+     {
+      "op": "replace",
+      "path": "/components/scripts/scripts/0/data/values/1/value",
+      "value": true
      },
      {
       "op": "replace",

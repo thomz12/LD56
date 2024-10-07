@@ -8,6 +8,7 @@ function start()
             local carrot = entity:find_child("carrot" .. tostring(math.tointeger(carrots)))
             carrot.scripts.carrot.follow(body2)
             carrots = carrots - 1
+            entity.audio:play()
         end
         if carrots == 0 and not game_over then
             juice.info("Game Over!")
