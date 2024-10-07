@@ -61,6 +61,11 @@ function start()
         entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
     end
 
+    if bunny_game.get_return_from_level() ~= 0 then
+        find_entity("ui_container").ui_element.anchor.x = 1.5
+        find_entity("leaderboards").scripts.leaderboard.show_leaderboard(bunny_game.get_return_from_level())
+    end
+
     find_entity("spawner").scripts.bunny_spawner.start_spawning_main_menu()
     local max_string = juice.load_string("max_reached")
     if not max_string or max_string == "" then

@@ -29,7 +29,6 @@ function show_ui(success)
     else
         entity:find_child("final_score_text").ui_text.text = "Score: " .. final_score
         entity:find_child("bunnies_text").ui_text.text = "Penalty: " .. math.floor(penalty * 100) .. "%"
-        entity:find_child("bunnies_text").ui_text.color = juice.color.new(172 / 255, 50 / 255, 50 / 255, 1)
     end
     entity:find_child("status_message").ui_text.text = "Uploading score..."
 
@@ -37,6 +36,8 @@ function show_ui(success)
     stats["level_" .. tostring(math.tointeger(bunny_game.get_current_difficulty()))] = final_score
     stats["bunnies_caught"] = bunny_game.get_caught_bunnies()
     stats["bunnies_caught_max"] = bunny_game.get_caught_bunnies()
+
+    bunny_game.set_return_from_level()
 
     if playfab.signed_in then
         playfab.update_player_statistics(stats, function(update_result, update_body)
