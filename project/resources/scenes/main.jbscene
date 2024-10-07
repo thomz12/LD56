@@ -486,7 +486,7 @@
             "x": 32.0,
             "y": 32.0
            },
-           "enabled": true,
+           "enabled": false,
            "inputType": 0,
            "offset": {
             "x": 0.0,
@@ -534,7 +534,7 @@
             "x": 32.0,
             "y": 32.0
            },
-           "enabled": true,
+           "enabled": false,
            "inputType": 0,
            "offset": {
             "x": 0.0,
@@ -569,6 +569,204 @@
          },
          "id": 12,
          "name": "credits"
+        },
+        {
+         "children": [
+          {
+           "children": null,
+           "components": {
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 0.0
+             },
+             "dimensions": {
+              "x": 32.0,
+              "y": 16.0
+             },
+             "enabled": true,
+             "inputType": 3,
+             "offset": {
+              "x": 0.0,
+              "y": 5.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 0.0
+             },
+             "rotation": 0.0
+            },
+            "ui_text": {
+             "color": {
+              "a": 1.0,
+              "b": 0.0,
+              "g": 0.0,
+              "r": 0.0
+             },
+             "font": {
+              "path": "fonts/poco.ttf"
+             },
+             "fontSize": 16.0,
+             "horizontal": 1,
+             "text": "User: Thom",
+             "vertical": 1,
+             "wrapText": false
+            }
+           },
+           "id": 1048662,
+           "name": "player_name_text"
+          },
+          {
+           "children": [
+            {
+             "children": null,
+             "components": {
+              "ui_element": {
+               "anchor": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "dimensions": {
+                "x": 32.0,
+                "y": 32.0
+               },
+               "enabled": true,
+               "inputType": 0,
+               "offset": {
+                "x": 0.0,
+                "y": 2.0
+               },
+               "parentScale": {
+                "x": 0.0,
+                "y": 0.0
+               },
+               "pivot": {
+                "x": 0.5,
+                "y": 0.5
+               },
+               "rotation": 0.0
+              },
+              "ui_text": {
+               "color": {
+                "a": 1.0,
+                "b": 0.0,
+                "g": 0.0,
+                "r": 0.0
+               },
+               "font": {
+                "path": "fonts/poco.ttf"
+               },
+               "fontSize": 12.0,
+               "horizontal": 1,
+               "text": "edit",
+               "vertical": 1,
+               "wrapText": false
+              }
+             },
+             "id": 88,
+             "name": "button_text"
+            }
+           ],
+           "components": {
+            "scripts": {
+             "scripts": [
+              {
+               "data": {
+                "values": null
+               },
+               "script": {
+                "path": "scripts/light_button.lua"
+               }
+              }
+             ]
+            },
+            "ui_9_slice": {
+             "border": 13.0,
+             "color": {
+              "a": 1.0,
+              "b": 1.0,
+              "g": 1.0,
+              "r": 1.0
+             },
+             "image": {
+              "path": "sprites/ui_button_lightest.png"
+             }
+            },
+            "ui_element": {
+             "anchor": {
+              "x": 1.0,
+              "y": 0.5
+             },
+             "dimensions": {
+              "x": 32.0,
+              "y": 20.0
+             },
+             "enabled": true,
+             "inputType": 2,
+             "offset": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.0,
+              "y": 0.5
+             },
+             "rotation": 0.0
+            }
+           },
+           "id": 1048659,
+           "name": "name_edit_button"
+          }
+         ],
+         "components": {
+          "ui_9_slice": {
+           "border": 5.0,
+           "color": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+           },
+           "image": {
+            "path": "sprites/ui_button.png"
+           }
+          },
+          "ui_element": {
+           "anchor": {
+            "x": 0.5,
+            "y": 0.5
+           },
+           "dimensions": {
+            "x": 186.0,
+            "y": 20.0
+           },
+           "enabled": true,
+           "inputType": 3,
+           "offset": {
+            "x": 0.0,
+            "y": -85.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 0.5
+           },
+           "rotation": 0.0
+          }
+         },
+         "id": 87,
+         "name": "player_name_background"
         }
        ],
        "components": {
