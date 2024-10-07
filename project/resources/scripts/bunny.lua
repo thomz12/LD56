@@ -178,4 +178,8 @@ function update()
             destroy_entity(entity)
         end
     end
+
+    if entity.transform.position.x > 200 then
+        destroy_entity(entity)
+    end
 end
