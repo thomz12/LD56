@@ -390,7 +390,7 @@
                },
                "fontSize": 16.0,
                "horizontal": 1,
-               "text": "Score 1337",
+               "text": "Score 1337 (80%)",
                "vertical": 1,
                "wrapText": false
               }
@@ -738,11 +738,11 @@
       "r": 0.8509804010391235
      },
      "farPlane": 100.0,
-     "height": 384,
+     "height": 0,
      "main": true,
      "nearPlane": 0.0,
      "useDepthStencil": true,
-     "width": 512,
+     "width": 0,
      "zoom": 2.0
     },
     "transform": {
@@ -764,8 +764,8 @@
       "y": 0.5
      },
      "dimensions": {
-      "x": 256.0,
-      "y": 192.0
+      "x": 307.5,
+      "y": 222.5
      },
      "enabled": true,
      "inputType": 3,

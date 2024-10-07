@@ -15,18 +15,26 @@ function show_ui(success)
         entity:find_child("header_text").ui_text.text = "Game Over!"
     end
 
-    local penalty = 5 - find_entity("garden").scripts.garden.carrots
-    
     find_entity("lasso").scripts.lasso.quit_drawing()
 
-    juice.info(tostring(penalty))
+    local carrots = find_entity("garden").scripts.garden.carrots
+    local penalty = 1.0 - (0.1 * (5 - carrots))
 
-    entity:find_child("final_score_text").ui_text.text = "Score: " .. bunny_game.get_score()
-    entity:find_child("bunnies_text").ui_text.text = "Bunnies Caught: " .. bunny_game.get_caught_bunnies()
+    juice.info("Penalty: " .. tostring(penalty))
+    local final_score = math.floor(bunny_game.get_score() * penalty)
+
+    if carrots == 5 then
+        entity:find_child("final_score_text").ui_text.text = "Score: " .. final_score
+        entity:find_child("bunnies_text").ui_text.text = "Bunnies Caught: " .. bunny_game.get_caught_bunnies()
+    else
+        entity:find_child("final_score_text").ui_text.text = "Score: " .. final_score
+        entity:find_child("bunnies_text").ui_text.text = "Penalty: " .. math.floor(penalty * 100) .. "%"
+        entity:find_child("bunnies_text").ui_text.color = juice.color.new(172 / 255, 50 / 255, 50 / 255, 1)
+    end
     entity:find_child("status_message").ui_text.text = "Uploading score..."
 
     local stats = {}
-    stats["level_" .. tostring(math.tointeger(bunny_game.get_current_difficulty()))] = bunny_game.get_score()
+    stats["level_" .. tostring(math.tointeger(bunny_game.get_current_difficulty()))] = final_score
     stats["bunnies_caught"] = bunny_game.get_caught_bunnies()
     stats["bunnies_caught_max"] = bunny_game.get_caught_bunnies()
 

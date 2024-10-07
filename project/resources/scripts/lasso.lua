@@ -202,9 +202,12 @@ function segment_added(number)
     segment.physics_box.is_sensor = true
 end
 
+function play_audio()
+end
+
 function line_blocked()
     got_blocked = true
-    show_text("Broken!", 1.0, juice.color.new(217 / 255, 87 / 255, 99 / 255, 1))
+    show_text("Lasso Broke!", 1.0, juice.color.new(217 / 255, 87 / 255, 99 / 255, 1))
 end
 
 ---Start drawing the line.
