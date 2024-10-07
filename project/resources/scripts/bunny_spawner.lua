@@ -48,3 +48,19 @@ function start_spawning()
         end
     end)
 end
+
+function start_spawning_main_menu()
+    juice.routine.create(function()
+        while spawning do
+            local cur_level = levels[bunny_game.get_current_difficulty()]
+            local bunny = spawn("prefabs/bunny.jbprefab")
+            bunny.transform.position = juice.vec3.new(
+                bunny.transform.position.x, 
+                math.random() * 128 - 64,
+                bunny.transform.position.z
+            )
+            bunny.scripts.bunny.bunny_number = cur_level.allowed_bunnies[math.random(#cur_level.allowed_bunnies)]
+            juice.routine.wait_seconds(cur_level.spawn_delay)
+        end
+    end)
+end

@@ -1,0 +1,309 @@
+{
+ "children": [
+  {
+   "children": [
+    {
+     "children": null,
+     "components": {
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 32.0,
+        "y": 32.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 0.0,
+        "y": 4.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_text": {
+       "color": {
+        "a": 1.0,
+        "b": 0.0,
+        "g": 0.0,
+        "r": 0.0
+       },
+       "font": {
+        "path": "fonts/poco.ttf"
+       },
+       "fontSize": 12.0,
+       "horizontal": 1,
+       "text": "Player Name",
+       "vertical": 1,
+       "wrapText": false
+      }
+     },
+     "id": 28,
+     "name": "leaderboard_name"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 4.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         },
+         "font": {
+          "path": "fonts/poco.ttf"
+         },
+         "fontSize": 12.0,
+         "horizontal": 1,
+         "text": "#42",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 30,
+       "name": "leaderboard_rank"
+      }
+     ],
+     "components": {
+      "ui_element": {
+       "anchor": {
+        "x": 0.0,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 32.0,
+        "y": 16.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": -1.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 1.0,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_image": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "image": {
+        "path": "sprites/leaderboard_noob_small.png"
+       }
+      }
+     },
+     "id": 29,
+     "name": "background_rank"
+    },
+    {
+     "children": [
+      {
+       "children": null,
+       "components": {
+        "ui_element": {
+         "anchor": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "dimensions": {
+          "x": 32.0,
+          "y": 32.0
+         },
+         "enabled": true,
+         "inputType": 3,
+         "offset": {
+          "x": 0.0,
+          "y": 4.0
+         },
+         "parentScale": {
+          "x": 0.0,
+          "y": 0.0
+         },
+         "pivot": {
+          "x": 0.5,
+          "y": 0.5
+         },
+         "rotation": 0.0
+        },
+        "ui_text": {
+         "color": {
+          "a": 1.0,
+          "b": 0.0,
+          "g": 0.0,
+          "r": 0.0
+         },
+         "font": {
+          "path": "fonts/poco.ttf"
+         },
+         "fontSize": 12.0,
+         "horizontal": 1,
+         "text": "1337",
+         "vertical": 1,
+         "wrapText": false
+        }
+       },
+       "id": 32,
+       "name": "leaderboard_score"
+      }
+     ],
+     "components": {
+      "ui_element": {
+       "anchor": {
+        "x": 1.0,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 32.0,
+        "y": 16.0
+       },
+       "enabled": true,
+       "inputType": 3,
+       "offset": {
+        "x": 1.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "pivot": {
+        "x": 0.0,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_image": {
+       "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+       },
+       "image": {
+        "path": "sprites/leaderboard_noob_small.png"
+       }
+      }
+     },
+     "id": 31,
+     "name": "background_score"
+    }
+   ],
+   "components": {
+    "ui_element": {
+     "anchor": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "dimensions": {
+      "x": 112.0,
+      "y": 16.0
+     },
+     "enabled": true,
+     "inputType": 3,
+     "offset": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "parentScale": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "pivot": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "rotation": 0.0
+    },
+    "ui_image": {
+     "color": {
+      "a": 1.0,
+      "b": 1.0,
+      "g": 1.0,
+      "r": 1.0
+     },
+     "image": {
+      "path": "sprites/leaderboard_noob.png"
+     }
+    }
+   },
+   "id": 1048603,
+   "name": "background_name"
+  }
+ ],
+ "components": {
+  "ui_element": {
+   "anchor": {
+    "x": 0.5,
+    "y": 0.0
+   },
+   "dimensions": {
+    "x": 0.0,
+    "y": 16.0
+   },
+   "enabled": true,
+   "inputType": 3,
+   "offset": {
+    "x": 0.0,
+    "y": -3.0
+   },
+   "parentScale": {
+    "x": 1.0,
+    "y": 0.0
+   },
+   "pivot": {
+    "x": 0.5,
+    "y": 1.0
+   },
+   "rotation": 0.0
+  }
+ },
+ "id": 1048595,
+ "name": "leaderboard_entry_1"
+}

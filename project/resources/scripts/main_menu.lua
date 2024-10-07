@@ -20,21 +20,23 @@ function start()
         end
         playfab.sign_in(id, function(login_success, login_body)
             if login_success then
-                playfab.get_player_profile(function(get_profile_success, get_profile_body)
-                    if get_profile_success then
-                        if not get_profile_body.PlayerProfile.DisplayName then
-                            has_username = false
-                            juice.info("User has no username!")
-                            playfab.set_display_name("Wrangler #" .. math.random(1000, 9999), function()
+                if not login_body.NewlyCreated then
+                    playfab.get_player_profile(function(get_profile_success, get_profile_body)
+                        if get_profile_success then
+                            if not get_profile_body.PlayerProfile.DisplayName then
+                                has_username = false
+                                juice.info("User has no username!")
+                                playfab.set_display_name("Wrangler #" .. math.random(1000, 9999), function()
 
-                            end)
+                                end)
+                            end
                         end
-                    end
-                end)
+                    end)
+                end
             end
         end)
     end
-
+    find_entity("spawner").scripts.bunny_spawner.start_spawning_main_menu()
     local max_string = juice.load_string("max_reached")
     if not max_string or max_string == "" then
         max_string = "1"
@@ -65,6 +67,21 @@ function start()
     find_entity("play_level_3_button").scripts.light_button.on_click = function()
         load_scene("scenes/game.jbscene")
         bunny_game.start_game(3)
+    end
+    entity:find_child("view_leaderboards_button").scripts.light_button.on_click = function()
+        juice.routine.create(function()
+            juice.routine.wait_seconds_func(0.5, function(x)
+                find_entity("ui_container").ui_element.anchor.x = juice.math.lerp(0.5, 1.5, juice.ease.in_out_expo(x))
+                find_entity("leaderboards").scripts.leaderboard.show_leaderboard(1)
+            end)
+        end)
+    end
+    entity:find_child("leaderboards_return_button").scripts.light_button.on_click = function()
+        juice.routine.create(function()
+            juice.routine.wait_seconds_func(0.5, function(x)
+                find_entity("ui_container").ui_element.anchor.x = juice.math.lerp(1.5, 0.5, juice.ease.in_out_expo(x))
+            end)
+        end)
     end
 end
 
