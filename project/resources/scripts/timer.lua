@@ -26,7 +26,7 @@ function update(delta_time)
         if timer_duration < 0 then
             timer_duration = 0
             started = false
-            find_entity("result_ui").scripts.result_ui.show_ui()
+            find_entity("result_ui").scripts.result_ui.show_ui(true)
         end
         local minutes = math.floor((timer_duration % 3600) / 60)
         local seconds = math.floor((timer_duration % 60))

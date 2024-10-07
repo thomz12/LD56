@@ -2,7 +2,8 @@
  "author": "Mathijs Koning & Thom Zeilstra",
  "engineVersion": "0.2.0",
  "globalScripts": [
-  "scripts/global/bunny_game.lua"
+  "scripts/global/bunny_game.lua",
+  "scripts/global/playfab.lua"
  ],
  "name": "LD56",
  "startScene": "scenes/main.jbscene",

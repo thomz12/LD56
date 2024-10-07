@@ -7,11 +7,30 @@ function start()
     end)
 end
 
-function show_ui()
+function show_ui(success)
+
+    if success then
+        juice.save_string("max_reached", tostring(bunny_game.get_current_difficulty() + 1))
+    end
 
     entity:find_child("final_score_text").ui_text.text = "Score: " .. bunny_game.get_score()
     entity:find_child("bunnies_text").ui_text.text = "Bunnies Caught: " .. bunny_game.get_caught_bunnies()
     entity:find_child("status_message").ui_text.text = "Uploading score..."
+
+    local stats = {}
+    stats["level_" .. tostring(math.tointeger(bunny_game.get_current_difficulty()))] = bunny_game.get_score()
+    stats["bunnies_caught"] = bunny_game.get_caught_bunnies()
+    stats["bunnies_caught_max"] = bunny_game.get_caught_bunnies()
+
+    if playfab.signed_in then
+        playfab.update_player_statistics(stats, function(update_result, update_body)
+            if update_result then
+                entity:find_child("status_message").ui_text.text = "Uploaded score!"
+            end
+        end)
+    else
+        entity:find_child("status_message").ui_text.text = "Score upload failed"
+    end
 
     juice.routine.create(function()
         entity.ui_element.enabled = true
