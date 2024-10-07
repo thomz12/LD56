@@ -38,7 +38,7 @@
      "type": 0
     }
    },
-   "id": 8,
+   "id": 43,
    "name": "capture_collision"
   },
   {
@@ -58,11 +58,20 @@
      "type": 0
     }
    },
-   "id": 9,
+   "id": 44,
    "name": "hat_attach"
   }
  ],
  "components": {
+  "audio": {
+   "audioClip": {
+    "path": "audio/fail2.wav"
+   },
+   "autoPlay": false,
+   "looping": false,
+   "pitch": 1.0,
+   "volume": 0.5
+  },
   "physics": {
    "allowSleep": true,
    "angularDamping": 0.009999999776482582,
@@ -85,7 +94,18 @@
    "scripts": [
     {
      "data": {
-      "values": null
+      "values": [
+       {
+        "name": "tutorial_bunny",
+        "type": 1,
+        "value": false
+       },
+       {
+        "name": "bunny_number",
+        "type": 3,
+        "value": 0.0
+       }
+      ]
      },
      "script": {
       "path": "scripts/bunny.lua"
@@ -138,6 +158,6 @@
    "type": 0
   }
  },
- "id": 7,
+ "id": 42,
  "name": "bunny"
 }

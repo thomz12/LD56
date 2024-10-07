@@ -61,6 +61,11 @@ function start()
         entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
     end
 
+    if bunny_game.get_return_from_level() ~= 0 then
+        find_entity("ui_container").ui_element.anchor.x = 1.5
+        find_entity("leaderboards").scripts.leaderboard.show_leaderboard(bunny_game.get_return_from_level())
+    end
+
     find_entity("spawner").scripts.bunny_spawner.start_spawning_main_menu()
     local max_string = juice.load_string("max_reached")
     if not max_string or max_string == "" then
@@ -82,16 +87,16 @@ function start()
     end
 
     find_entity("play_level_1_button").scripts.light_button.on_click = function()
-        load_scene("scenes/game.jbscene")
         bunny_game.start_game(1)
+        load_level()
     end
     find_entity("play_level_2_button").scripts.light_button.on_click = function()
-        load_scene("scenes/game.jbscene")
         bunny_game.start_game(2)
+        load_level()
     end
     find_entity("play_level_3_button").scripts.light_button.on_click = function()
-        load_scene("scenes/game.jbscene")
         bunny_game.start_game(3)
+        load_level()
     end
     entity:find_child("view_leaderboards_button").scripts.light_button.on_click = function()
         juice.routine.create(function()
@@ -117,6 +122,12 @@ function start()
             end
         end)
     end
+end
+
+function load_level()
+    find_entity("ui_fade_panel").scripts.fade.fade_in(function()
+        load_scene("scenes/game.jbscene")
+    end)
 end
 
 function update()

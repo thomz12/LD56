@@ -6,6 +6,7 @@ function start()
 
                 if string.find(entity.name, "bunny") then
                     entity.scripts.bunny.flash_bunny()
+                    entity.audio:play()
                 end
             end
         end
@@ -18,6 +19,7 @@ function start()
 
                 if string.find(entity.name, "bunny") then
                     entity.scripts.bunny.flash_bunny()
+                    entity.audio:play()
                 end
             end
         end

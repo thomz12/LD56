@@ -11,9 +11,19 @@ max_radius = 256.0
 
 circle_threshold = 0.6
 
+local allow_draw = true
+
 on_circle_complete = function() end
 
 function update(delta_time)
+
+    if not allow_draw then
+        if is_drawing then
+            end_drawing()
+        end
+        return
+    end
+
     -- Check for start of drawing.
     if not is_drawing then
         if juice.input.is_key_pressed("mouse_left") then
@@ -73,7 +83,11 @@ function get_average_point()
     return average
 end
 
----Functoin to calculate bounding box and take its center.
+function quit_drawing()
+    allow_draw = false
+end
+
+---Function to calculate bounding box and take its center.
 function get_center_from_bounding_box()
     local bottom_left = juice.vec2.new(math.maxinteger, math.maxinteger)
     local top_right = juice.vec2.new(math.mininteger, math.mininteger)
@@ -152,12 +166,16 @@ function complete_circle()
 
         if circle_score > 0.8 then
             show_text("Perfect Circle! x4 bonus", 1.0, juice.color.new(251 / 255, 242 / 255, 54 / 255, 1))
+            play_audio("bliep3")
         elseif circle_score > 0.75 then
-            show_text("Nice Circle! x3 bonus", 1.0, juice.color.new(55 / 255, 148 / 255, 110 / 255, 1))
+            show_text("Nice Circle! x3 bonus", 1.0, juice.color.new(99 / 255, 255 / 255, 255 / 255, 1))
+            play_audio("bliep2")
         elseif circle_score > 0.7 then
-            show_text("Ok Circle! x2 bonus", 1.0, juice.color.new(155 / 255, 173 / 255, 183 / 255, 1))
+            show_text("Ok Circle! x2 bonus", 1.0, juice.color.new(106 / 255, 190 / 255, 48 / 255, 1))
+            play_audio("bliep1")
         else
             show_text("Circle!", 1.0, juice.color.new(1, 1, 1, 1))
+            play_audio("bliep0")
         end
 
         on_circle_complete(center, min_dist, circle_score)
@@ -188,9 +206,13 @@ function segment_added(number)
     segment.physics_box.is_sensor = true
 end
 
+function play_audio(name)
+    entity:find_child(name).audio:play()
+end
+
 function line_blocked()
     got_blocked = true
-    show_text("Broken!", 1.0, juice.color.new(217 / 255, 87 / 255, 99 / 255, 1))
+    show_text("Lasso Broke!", 1.0, juice.color.new(217 / 255, 87 / 255, 99 / 255, 1))
 end
 
 ---Start drawing the line.

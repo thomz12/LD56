@@ -20,6 +20,10 @@ function damp(start, target, smoothing, delta)
     return juice.math.lerp(start, target, 1 - smoothing ^ delta)
 end
 
+function stop()
+    started = false
+end
+
 function update(delta_time)
     if started then
         timer_duration = timer_duration - delta_time

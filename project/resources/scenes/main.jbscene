@@ -24,7 +24,7 @@
              "inputType": 0,
              "offset": {
               "x": 0.0,
-              "y": 6.0
+              "y": 3.0
              },
              "parentScale": {
               "x": 0.0,
@@ -46,7 +46,7 @@
              "font": {
               "path": "fonts/poco.ttf"
              },
-             "fontSize": 24.0,
+             "fontSize": 16.0,
              "horizontal": 1,
              "text": "Easy",
              "vertical": 1,
@@ -89,13 +89,13 @@
            },
            "dimensions": {
             "x": 100.0,
-            "y": 24.0
+            "y": 20.0
            },
            "enabled": true,
            "inputType": 2,
            "offset": {
             "x": 0.0,
-            "y": 26.0
+            "y": 13.0
            },
            "parentScale": {
             "x": 0.0,
@@ -129,7 +129,7 @@
              "inputType": 0,
              "offset": {
               "x": 0.0,
-              "y": 6.0
+              "y": 3.0
              },
              "parentScale": {
               "x": 0.0,
@@ -151,7 +151,7 @@
              "font": {
               "path": "fonts/poco.ttf"
              },
-             "fontSize": 24.0,
+             "fontSize": 16.0,
              "horizontal": 1,
              "text": "Medium",
              "vertical": 1,
@@ -194,13 +194,13 @@
            },
            "dimensions": {
             "x": 100.0,
-            "y": 24.0
+            "y": 20.0
            },
            "enabled": true,
            "inputType": 2,
            "offset": {
             "x": 0.0,
-            "y": 0.0
+            "y": -8.0
            },
            "parentScale": {
             "x": 0.0,
@@ -234,7 +234,7 @@
              "inputType": 0,
              "offset": {
               "x": 0.0,
-              "y": 6.0
+              "y": 3.0
              },
              "parentScale": {
               "x": 0.0,
@@ -256,7 +256,7 @@
              "font": {
               "path": "fonts/poco.ttf"
              },
-             "fontSize": 24.0,
+             "fontSize": 16.0,
              "horizontal": 1,
              "text": "Hard",
              "vertical": 1,
@@ -299,13 +299,13 @@
            },
            "dimensions": {
             "x": 100.0,
-            "y": 24.0
+            "y": 20.0
            },
            "enabled": true,
            "inputType": 2,
            "offset": {
             "x": 0.0,
-            "y": -26.0
+            "y": -29.0
            },
            "parentScale": {
             "x": 0.0,
@@ -339,7 +339,7 @@
              "inputType": 0,
              "offset": {
               "x": 0.0,
-              "y": 6.0
+              "y": 3.0
              },
              "parentScale": {
               "x": 0.0,
@@ -361,7 +361,7 @@
              "font": {
               "path": "fonts/poco.ttf"
              },
-             "fontSize": 24.0,
+             "fontSize": 16.0,
              "horizontal": 1,
              "text": "Leaderboards",
              "vertical": 1,
@@ -404,7 +404,7 @@
            },
            "dimensions": {
             "x": 153.0,
-            "y": 24.0
+            "y": 20.0
            },
            "enabled": true,
            "inputType": 2,
@@ -429,20 +429,32 @@
         {
          "children": null,
          "components": {
+          "scripts": {
+           "scripts": [
+            {
+             "data": {
+              "values": null
+             },
+             "script": {
+              "path": "scripts/logo.lua"
+             }
+            }
+           ]
+          },
           "ui_element": {
            "anchor": {
             "x": 0.5,
             "y": 0.8999999761581421
            },
            "dimensions": {
-            "x": 32.0,
-            "y": 32.0
+            "x": 96.0,
+            "y": 64.0
            },
            "enabled": true,
            "inputType": 3,
            "offset": {
             "x": 0.0,
-            "y": 0.0
+            "y": -23.0
            },
            "parentScale": {
             "x": 0.0,
@@ -454,21 +466,16 @@
            },
            "rotation": 0.0
           },
-          "ui_text": {
+          "ui_image": {
            "color": {
             "a": 1.0,
             "b": 1.0,
             "g": 1.0,
             "r": 1.0
            },
-           "font": {
-            "path": "fonts/poco.ttf"
-           },
-           "fontSize": 32.0,
-           "horizontal": 1,
-           "text": "Bunny Wrangler",
-           "vertical": 1,
-           "wrapText": false
+           "image": {
+            "path": "sprites/logo.png"
+           }
           }
          },
          "id": 3,
@@ -612,7 +619,7 @@
              },
              "fontSize": 16.0,
              "horizontal": 1,
-             "text": "User: Thom",
+             "text": "Signing in...",
              "vertical": 1,
              "wrapText": false
             }
@@ -1772,6 +1779,58 @@
      },
      "id": 22,
      "name": "ui_container"
+    },
+    {
+     "children": null,
+     "components": {
+      "scripts": {
+       "scripts": [
+        {
+         "data": {
+          "values": null
+         },
+         "script": {
+          "path": "scripts/fade.lua"
+         }
+        }
+       ]
+      },
+      "ui_element": {
+       "anchor": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "dimensions": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "enabled": true,
+       "inputType": 0,
+       "offset": {
+        "x": 0.0,
+        "y": 0.0
+       },
+       "parentScale": {
+        "x": 1.0,
+        "y": 1.0
+       },
+       "pivot": {
+        "x": 0.5,
+        "y": 0.5
+       },
+       "rotation": 0.0
+      },
+      "ui_panel": {
+       "color": {
+        "a": 0.0,
+        "b": 0.0,
+        "g": 0.0,
+        "r": 0.0
+       }
+      }
+     },
+     "id": 1048665,
+     "name": "ui_fade_panel"
     }
    ],
    "components": {

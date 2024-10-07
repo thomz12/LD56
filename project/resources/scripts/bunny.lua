@@ -115,6 +115,17 @@ function set_hats(count)
     hats = count
 end
 
+function show_text(text, duration)
+    local pos = juice.vec2.new(entity.transform.position.x, entity.transform.position.y)
+    local text_entity = spawn("prefabs/text.jbprefab")
+    text_entity.scripts.ingame_text.setup_text(text, duration, juice.color.new(1, 1, 1, 1), pos.y)
+    text_entity.transform.position = juice.vec3.new(
+        pos.x,
+        pos.y,
+        text_entity.transform.position.z
+    )
+end
+
 --Call to capture the bunny.
 function capture()
     -- Lose hat if caught.
@@ -124,8 +135,10 @@ function capture()
         hats = hats - 1
         flash_bunny()
         bunny_game.add_score(100)
+        show_text("+100", 1.0)
     elseif not captured then
         flash_bunny()
+        show_text("+200", 1.0)
         bunny_game.add_score(200)
         bunny_game.catch_bunny()
         captured = true
@@ -179,7 +192,9 @@ function update()
         end
     end
 
-    if entity.transform.position.x > 200 then
-        destroy_entity(entity)
+    if entity.transform ~= nil then
+        if entity.transform.position.x > 200 then
+            destroy_entity(entity)
+        end
     end
 end

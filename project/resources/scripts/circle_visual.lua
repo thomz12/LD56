@@ -23,5 +23,9 @@ function show()
         juice.routine.wait_seconds(0.05)
         entity.sprite.color.a = 0
         can_capture = false
+
+        if caught == 1 then
+            entity.audio:play()
+        end
     end)
 end
