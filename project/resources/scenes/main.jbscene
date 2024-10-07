@@ -1329,6 +1329,11 @@
              },
              {
               "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
+             },
+             {
+              "op": "replace",
               "path": "/components/ui_element/offset/y",
               "value": -88.0
              },
@@ -1383,6 +1388,11 @@
              },
              {
               "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
+             },
+             {
+              "op": "replace",
               "path": "/components/ui_element/offset/y",
               "value": -105.0
              },
@@ -1434,6 +1444,11 @@
               "op": "replace",
               "path": "/children/0/id",
               "value": 76
+             },
+             {
+              "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
              },
              {
               "op": "replace",
@@ -1705,6 +1720,216 @@
          },
          "id": 20,
          "name": "leaderboards_return_button"
+        },
+        {
+         "children": [
+          {
+           "children": null,
+           "components": {
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 0.5
+             },
+             "dimensions": {
+              "x": 32.0,
+              "y": 32.0
+             },
+             "enabled": true,
+             "inputType": 0,
+             "offset": {
+              "x": 0.0,
+              "y": 2.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 0.5
+             },
+             "rotation": 0.0
+            },
+            "ui_text": {
+             "color": {
+              "a": 1.0,
+              "b": 0.0,
+              "g": 0.0,
+              "r": 0.0
+             },
+             "font": {
+              "path": "fonts/poco.ttf"
+             },
+             "fontSize": 12.0,
+             "horizontal": 1,
+             "text": "->",
+             "vertical": 1,
+             "wrapText": false
+            }
+           },
+           "id": 92,
+           "name": "button_text"
+          }
+         ],
+         "components": {
+          "scripts": {
+           "scripts": [
+            {
+             "data": {
+              "values": null
+             },
+             "script": {
+              "path": "scripts/light_button.lua"
+             }
+            }
+           ]
+          },
+          "ui_9_slice": {
+           "border": 4.0,
+           "color": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+           },
+           "image": {
+            "path": "sprites/ui_button_lightest.png"
+           }
+          },
+          "ui_element": {
+           "anchor": {
+            "x": 0.699999988079071,
+            "y": 0.0
+           },
+           "dimensions": {
+            "x": 18.0,
+            "y": 18.0
+           },
+           "enabled": true,
+           "inputType": 2,
+           "offset": {
+            "x": 0.0,
+            "y": 21.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 0.0
+           },
+           "rotation": 0.0
+          }
+         },
+         "id": 91,
+         "name": "leaderboard_next_page_button"
+        },
+        {
+         "children": [
+          {
+           "children": null,
+           "components": {
+            "ui_element": {
+             "anchor": {
+              "x": 0.5,
+              "y": 0.5
+             },
+             "dimensions": {
+              "x": 32.0,
+              "y": 32.0
+             },
+             "enabled": true,
+             "inputType": 0,
+             "offset": {
+              "x": 0.0,
+              "y": 2.0
+             },
+             "parentScale": {
+              "x": 0.0,
+              "y": 0.0
+             },
+             "pivot": {
+              "x": 0.5,
+              "y": 0.5
+             },
+             "rotation": 0.0
+            },
+            "ui_text": {
+             "color": {
+              "a": 1.0,
+              "b": 0.0,
+              "g": 0.0,
+              "r": 0.0
+             },
+             "font": {
+              "path": "fonts/poco.ttf"
+             },
+             "fontSize": 12.0,
+             "horizontal": 1,
+             "text": "<-",
+             "vertical": 1,
+             "wrapText": false
+            }
+           },
+           "id": 94,
+           "name": "button_text"
+          }
+         ],
+         "components": {
+          "scripts": {
+           "scripts": [
+            {
+             "data": {
+              "values": null
+             },
+             "script": {
+              "path": "scripts/light_button.lua"
+             }
+            }
+           ]
+          },
+          "ui_9_slice": {
+           "border": 4.0,
+           "color": {
+            "a": 1.0,
+            "b": 1.0,
+            "g": 1.0,
+            "r": 1.0
+           },
+           "image": {
+            "path": "sprites/ui_button_lightest.png"
+           }
+          },
+          "ui_element": {
+           "anchor": {
+            "x": 0.30000001192092896,
+            "y": 0.0
+           },
+           "dimensions": {
+            "x": 18.0,
+            "y": 18.0
+           },
+           "enabled": true,
+           "inputType": 2,
+           "offset": {
+            "x": 0.0,
+            "y": 21.0
+           },
+           "parentScale": {
+            "x": 0.0,
+            "y": 0.0
+           },
+           "pivot": {
+            "x": 0.5,
+            "y": 0.0
+           },
+           "rotation": 0.0
+          }
+         },
+         "id": 93,
+         "name": "leaderboard_prev_page_button"
         }
        ],
        "components": {
@@ -1753,7 +1978,7 @@
      "components": {
       "ui_element": {
        "anchor": {
-        "x": 0.5,
+        "x": 1.5,
         "y": 0.5
        },
        "dimensions": {
