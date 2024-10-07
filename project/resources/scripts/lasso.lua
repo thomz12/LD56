@@ -11,9 +11,19 @@ max_radius = 256.0
 
 circle_threshold = 0.6
 
+local allow_draw = true
+
 on_circle_complete = function() end
 
 function update(delta_time)
+
+    if not allow_draw then
+        if is_drawing then
+            end_drawing()
+        end
+        return
+    end
+
     -- Check for start of drawing.
     if not is_drawing then
         if juice.input.is_key_pressed("mouse_left") then
@@ -73,7 +83,11 @@ function get_average_point()
     return average
 end
 
----Functoin to calculate bounding box and take its center.
+function quit_drawing()
+    allow_draw = false
+end
+
+---Function to calculate bounding box and take its center.
 function get_center_from_bounding_box()
     local bottom_left = juice.vec2.new(math.maxinteger, math.maxinteger)
     local top_right = juice.vec2.new(math.mininteger, math.mininteger)

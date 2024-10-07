@@ -1,5 +1,7 @@
 carrots = 5
 
+local game_over = false
+
 function start()
     entity.physics_box.on_collision_start = function (body1, body2)
         if carrots > 0 then
@@ -7,8 +9,11 @@ function start()
             carrot.scripts.carrot.follow(body2)
             carrots = carrots - 1
         end
-        if carrots == 0 then
-            juice.info("Game over!")
+        if carrots == 0 and not game_over then
+            juice.info("Game Over!")
+            game_over = true
+            find_entity("timer").scripts.timer.stop()
+            find_entity("result_ui").scripts.result_ui.show_ui(false)
         end
     end
 end

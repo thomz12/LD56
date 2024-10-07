@@ -82,16 +82,16 @@ function start()
     end
 
     find_entity("play_level_1_button").scripts.light_button.on_click = function()
-        load_scene("scenes/game.jbscene")
         bunny_game.start_game(1)
+        load_level()
     end
     find_entity("play_level_2_button").scripts.light_button.on_click = function()
-        load_scene("scenes/game.jbscene")
         bunny_game.start_game(2)
+        load_level()
     end
     find_entity("play_level_3_button").scripts.light_button.on_click = function()
-        load_scene("scenes/game.jbscene")
         bunny_game.start_game(3)
+        load_level()
     end
     entity:find_child("view_leaderboards_button").scripts.light_button.on_click = function()
         juice.routine.create(function()
@@ -117,6 +117,12 @@ function start()
             end
         end)
     end
+end
+
+function load_level()
+    find_entity("ui_fade_panel").scripts.fade.fade_in(function()
+        load_scene("scenes/game.jbscene")
+    end)
 end
 
 function update()

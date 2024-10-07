@@ -11,7 +11,15 @@ function show_ui(success)
 
     if success then
         juice.save_string("max_reached", tostring(bunny_game.get_current_difficulty() + 1))
+    else
+        entity:find_child("header_text").ui_text.text = "Game Over!"
     end
+
+    local penalty = 5 - find_entity("garden").scripts.garden.carrots
+    
+    find_entity("lasso").scripts.lasso.quit_drawing()
+
+    juice.info(tostring(penalty))
 
     entity:find_child("final_score_text").ui_text.text = "Score: " .. bunny_game.get_score()
     entity:find_child("bunnies_text").ui_text.text = "Bunnies Caught: " .. bunny_game.get_caught_bunnies()
