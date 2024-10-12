@@ -58,7 +58,7 @@ function start()
             end
         end)
     else
-        entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
+        entity:find_child("player_name_text").ui_text.text = "Welcome, " .. (bunny_game.get_username() or "no username")
     end
 
     if bunny_game.get_return_from_level() ~= 0 then
@@ -100,9 +100,9 @@ function start()
     end
     entity:find_child("view_leaderboards_button").scripts.light_button.on_click = function()
         juice.routine.create(function()
+            find_entity("leaderboards").scripts.leaderboard.show_leaderboard(1)
             juice.routine.wait_seconds_func(0.5, function(x)
                 find_entity("ui_container").ui_element.anchor.x = juice.math.lerp(0.5, 1.5, juice.ease.in_out_expo(x))
-                find_entity("leaderboards").scripts.leaderboard.show_leaderboard(1)
             end)
         end)
     end
@@ -115,12 +115,14 @@ function start()
     end
     entity:find_child("name_edit_button").scripts.light_button.on_click = function()
         local new_name = juice.prompt("Username for leaderboards:", bunny_game.get_username())
-        playfab.set_display_name(new_name, function(name_result, name_body)
-            if name_result then
-                bunny_game.set_username(name_body.DisplayName)
-                entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
-            end
-        end)
+        if new_name then
+            playfab.set_display_name(new_name, function(name_result, name_body)
+                if name_result then
+                    bunny_game.set_username(name_body.DisplayName)
+                    entity:find_child("player_name_text").ui_text.text = "Welcome, " .. bunny_game.get_username()
+                end
+            end)
+        end
     end
 end
 

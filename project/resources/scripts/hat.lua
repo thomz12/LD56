@@ -11,6 +11,15 @@ local hats = {
     [4] = {
         offset = juice.vec2.new(80, 240) -- fez
     },
+    [5] = {
+        offset = juice.vec2.new(80, 192) -- construction
+    },
+    [6] = {
+        offset = juice.vec2.new(96, 224) -- magic
+    },
+    [7] = {
+        offset = juice.vec2.new(96, 208) -- magic
+    },
 }
 
 local hat = {}

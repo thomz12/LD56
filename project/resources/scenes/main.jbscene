@@ -1072,7 +1072,13 @@
            "id": 1048595,
            "name": "leaderboard_entry_1",
            "prefab": {
-            "patch": [],
+            "patch": [
+             {
+              "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
+             }
+            ],
             "path": "prefabs/leaderboard_entry.jbprefab"
            }
           },
@@ -1110,6 +1116,11 @@
               "op": "replace",
               "path": "/children/0/id",
               "value": 34
+             },
+             {
+              "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
              },
              {
               "op": "replace",
@@ -1167,6 +1178,11 @@
              },
              {
               "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
+             },
+             {
+              "op": "replace",
               "path": "/components/ui_element/offset/y",
               "value": -37.0
              },
@@ -1221,6 +1237,11 @@
              },
              {
               "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
+             },
+             {
+              "op": "replace",
               "path": "/components/ui_element/offset/y",
               "value": -54.0
              },
@@ -1272,6 +1293,11 @@
               "op": "replace",
               "path": "/children/0/id",
               "value": 55
+             },
+             {
+              "op": "replace",
+              "path": "/components/ui_element/inputType",
+              "value": 0
              },
              {
               "op": "replace",
@@ -1493,7 +1519,7 @@
             "y": 32.0
            },
            "enabled": true,
-           "inputType": 3,
+           "inputType": 1,
            "offset": {
             "x": 0.0,
             "y": 0.0
@@ -1955,7 +1981,7 @@
           "y": 0.0
          },
          "enabled": true,
-         "inputType": 3,
+         "inputType": 1,
          "offset": {
           "x": 0.0,
           "y": 0.0
@@ -1978,7 +2004,7 @@
      "components": {
       "ui_element": {
        "anchor": {
-        "x": 1.5,
+        "x": 0.5,
         "y": 0.5
        },
        "dimensions": {
